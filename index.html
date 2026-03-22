@@ -362,7 +362,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
           <h2>Get in touch</h2>
           <p>Have a question, found a bug, or want to suggest a feature? Reach out directly — I read every email and genuinely appreciate the feedback.</p>
           <div class="email-box">
-            <div class="email-addr"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c6a797278756d5c6869687d327573">[email&#160;protected]</a></div>
+            <div class="email-addr" id="emailAddr"></div>
             <button class="copy-btn" onclick="copyEmail()">Copy</button>
           </div>
           <p class="c-note">Response time is typically within 48 hours. Include your device type and description of the issue for fastest help.</p>
@@ -396,7 +396,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function showPage(name) {
   document.querySelectorAll('.pg').forEach(function(p) { p.classList.remove('active'); });
   document.getElementById('pg-' + name).classList.add('active');
@@ -476,11 +476,11 @@ async function doDownload() {
 }
 
 function fallback() {
-  alert('To get the Vendiq app, email us at vendiq@tuta.io and we\'ll send it right over!');
+  var e='vendiq'+'@'+'tuta.io'; alert('To get the Vendiq app, email us at '+e+' and we\'ll send it right over!');
 }
 
 function copyEmail() {
-  navigator.clipboard.writeText('vendiq@tuta.io').then(function() {
+  navigator.clipboard.writeText('vendiq'+'@'+'tuta.io').then(function() {
     var btn = document.querySelector('.copy-btn');
     var orig = btn.textContent;
     btn.textContent = 'Copied!';

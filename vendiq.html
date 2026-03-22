@@ -427,7 +427,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
         <div style="font-size:28px;margin-bottom:10px">💬</div>
         <h3>Need help?</h3>
         <p>Questions, bugs, or feature ideas — we read every message.</p>
-        <div class="support-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90e6f5fef4f9e1d0e4e5e4f1bef9ff">[email&#160;protected]</a></div>
+        <div class="support-email" id="appEmail"></div>
         <div style="font-size:12px;color:var(--mu)">Copy the address above and send us an email</div>
       </div>
       <div style="height:10px"></div>
@@ -493,7 +493,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
   </nav>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const FBA={small:3.22,large:4.75,oversized:6.50},REF=0.15;
 let ST={products:[],clipboard:[],budgetUsed:0,paused:false,selClip:[],filterCat:'All'};
 
@@ -833,6 +833,7 @@ if(!localStorage.getItem('v_server')){
   localStorage.setItem('v_server','https://vendiq-server.up.railway.app');
 }
 load();updateBudget();updateServerStatus();
+(function(){var el=document.getElementById('appEmail');if(el)el.textContent='vendiq'+'@'+'tuta.io';})();
 if('serviceWorker' in navigator){
   const sw=[
     "const C='vendiq-v6';",
