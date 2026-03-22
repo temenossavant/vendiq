@@ -169,11 +169,9 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 <nav>
   <div class="nav-logo" onclick="showPage('home')">Vend<span>iq</span></div>
   <div class="nav-links">
-    <a onclick="showPage('home');scrollTo('#features')">Features</a>
     <a onclick="showPage('home');scrollTo('#how')">How it works</a>
-    <a onclick="showPage('home');scrollTo('#download')">Download</a>
+    <a onclick="showPage('home');scrollTo('#download')">Get the app</a>
     <a onclick="showPage('contact')">Contact us</a>
-    <button class="nav-cta" onclick="downloadApp()">Download free</button>
   </div>
 </nav>
 
@@ -323,7 +321,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
           <h2>Get in touch</h2>
           <p>Have a question, found a bug, or want to suggest a feature? Reach out directly — I read every email and genuinely appreciate the feedback.</p>
           <div class="email-display">
-            <div class="email-addr">vendiq@tuta.io</div>
+            <div class="email-addr"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="097f6c676d6078497d7c7d68276066">[email&#160;protected]</a></div>
             <button class="copy-btn" onclick="copyEmail()">Copy</button>
           </div>
           <p class="contact-note">Response time is typically within 48 hours. Include your device type and a description of the issue for the fastest help.</p>
@@ -372,7 +370,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function showPage(name){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));
   document.getElementById('pg-'+name).classList.add('active');
@@ -416,14 +414,4 @@ function copyEmail(){
 
 function initObserver(){
   const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-  },{threshold:0.12});
-  document.querySelectorAll('.fade-up').forEach(el=>{
-    el.classList.remove('visible');
-    obs.observe(el);
-  });
-}
-initObserver();
-</script>
-</body>
-</html>
+    entries.forEach(e=>{if(e.isIntersecti
