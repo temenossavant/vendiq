@@ -8,31 +8,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#080810;--s1:#0f0f1a;--s2:#16162a;
-  --gn:#3ddc84;--gn2:#2ab870;--bl:#5b8def;
-  --tx:#f0f0fa;--mu:#8888aa;--hi:#3a3a60;
-}
+:root{--bg:#080810;--s1:#0f0f1a;--s2:#16162a;--gn:#3ddc84;--gn2:#2ab870;--bl:#5b8def;--tx:#f0f0fa;--mu:#8888aa;--hi:#3a3a60;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overflow-x:hidden;line-height:1.6}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,16,.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
 .nav-logo{font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:-.3px;color:var(--tx);cursor:pointer}
 .nav-logo span{color:var(--gn)}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{color:var(--mu);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;cursor:pointer}
 .nav-links a:hover{color:var(--tx)}
-.nav-cta{background:var(--gn);color:#000;padding:9px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:background .2s,transform .1s;cursor:pointer}
+.nav-cta{background:var(--gn);color:#000;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .1s;cursor:pointer;border:none;font-family:inherit}
 .nav-cta:hover{background:var(--gn2);transform:translateY(-1px)}
-
-/* PAGES */
 .pg{display:none;min-height:100vh}
 .pg.active{display:block}
-
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.18;animation:float 8s ease-in-out infinite}
 .orb1{width:500px;height:500px;background:var(--gn);top:-100px;left:-150px;animation-delay:0s}
@@ -46,13 +36,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .hero h1 em{font-style:italic;color:var(--gn)}
 .hero-sub{font-size:clamp(16px,2.5vw,20px);color:var(--mu);max-width:560px;margin:0 auto 44px;line-height:1.7;font-weight:300;position:relative;z-index:1}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
-.btn-primary{background:var(--gn);color:#000;padding:15px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gn);color:#000;padding:15px 32px;border-radius:10px;font-size:16px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
 .btn-primary:hover{background:var(--gn2);transform:translateY(-2px);box-shadow:0 16px 40px rgba(61,220,132,.25)}
-.btn-secondary{background:rgba(255,255,255,.05);color:var(--tx);padding:15px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1);transition:all .2s;cursor:pointer;font-family:inherit}
+.btn-secondary{background:rgba(255,255,255,.05);color:var(--tx);padding:15px 32px;border-radius:10px;font-size:16px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1);transition:all .2s;cursor:pointer;font-family:inherit}
 .btn-secondary:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
 .hero-note{font-size:13px;color:var(--hi);margin-top:18px;position:relative;z-index:1}
-
-/* PHONE MOCKUP */
 .mockup-wrap{position:relative;z-index:1;margin-top:70px;display:flex;justify-content:center}
 .phone{width:260px;background:#0f0f1a;border-radius:36px;border:1.5px solid rgba(255,255,255,.12);padding:12px;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);position:relative;overflow:hidden}
 .phone::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#0a0a0d;border-radius:0 0 14px 14px;z-index:10}
@@ -77,8 +65,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .phone-nav-item.act{color:var(--gn)}
 .phone-nav-icon{font-size:14px}
 .phone-glow{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:200px;height:200px;background:var(--gn);border-radius:50%;filter:blur(60px);opacity:.12}
-
-/* FEATURES */
+.stats{padding:60px 24px;position:relative;z-index:1}
+.stats-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
+.stat{background:var(--s1);padding:36px 28px;text-align:center}
+.stat-val{font-family:'DM Serif Display',serif;font-size:44px;color:var(--gn);line-height:1;margin-bottom:8px}
+.stat-lbl{font-size:13px;color:var(--mu);font-weight:500}
 .features{padding:100px 24px;position:relative;z-index:1}
 .section-label{text-align:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gn);margin-bottom:14px}
 .section-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);text-align:center;line-height:1.15;margin-bottom:56px;letter-spacing:-.02em}
@@ -90,8 +81,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .feat h3{font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px}
 .feat p{font-size:14px;color:var(--mu);line-height:1.7}
 .feat-tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:600;color:var(--gn);background:rgba(61,220,132,.1);padding:3px 10px;border-radius:20px}
-
-/* HOW IT WORKS */
 .how{padding:80px 24px 100px;position:relative;z-index:1}
 .how-inner{max-width:660px;margin:0 auto}
 .how-step{display:flex;gap:20px;margin-bottom:36px}
@@ -103,15 +92,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .how-num.n5{background:rgba(61,220,132,.12);color:var(--gn);border:1px solid rgba(61,220,132,.25)}
 .how-content h3{font-size:17px;font-weight:700;margin-bottom:5px;letter-spacing:-.2px}
 .how-content p{font-size:14px;color:var(--mu);line-height:1.7}
-
-/* STATS */
-.stats{padding:60px 24px;position:relative;z-index:1}
-.stats-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
-.stat{background:var(--s1);padding:36px 28px;text-align:center}
-.stat-val{font-family:'DM Serif Display',serif;font-size:44px;color:var(--gn);line-height:1;margin-bottom:8px}
-.stat-lbl{font-size:13px;color:var(--mu);font-weight:500}
-
-/* DOWNLOAD */
 .download{padding:100px 24px;position:relative;z-index:1;text-align:center}
 .download-card{max-width:680px;margin:0 auto;background:linear-gradient(135deg,rgba(61,220,132,.08) 0%,rgba(91,141,239,.08) 100%);border:1px solid rgba(61,220,132,.2);border-radius:24px;padding:56px 40px}
 .download-card h2{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,46px);line-height:1.15;margin-bottom:14px;letter-spacing:-.02em}
@@ -121,8 +101,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .dl-step span{font-weight:600;color:var(--tx)}
 .download-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .download-note{font-size:12px;color:var(--hi);margin-top:16px}
-
-/* CONTACT PAGE */
 .contact-pg{min-height:100vh;padding:120px 24px 80px;position:relative;overflow:hidden}
 .contact-orb1{position:absolute;width:400px;height:400px;background:var(--gn);border-radius:50%;filter:blur(100px);opacity:.08;top:-100px;right:-100px;pointer-events:none}
 .contact-orb2{position:absolute;width:300px;height:300px;background:var(--bl);border-radius:50%;filter:blur(100px);opacity:.08;bottom:0;left:-80px;pointer-events:none}
@@ -132,15 +110,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .contact-inner h1 em{font-style:italic;color:var(--gn)}
 .contact-intro{font-size:16px;color:var(--mu);line-height:1.8;max-width:600px;margin-bottom:56px}
 .contact-intro strong{color:var(--tx)}
-
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
 .contact-card{background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:32px}
 .contact-card.full{grid-column:1/-1}
 .contact-card-icon{font-size:30px;margin-bottom:16px}
 .contact-card h2{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:10px;letter-spacing:-.2px}
 .contact-card p{font-size:14px;color:var(--mu);line-height:1.7;margin-bottom:16px}
-
-/* Donate options */
 .donate-opts{display:flex;flex-direction:column;gap:10px}
 .donate-opt{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:border-color .2s,background .2s;text-decoration:none}
 .donate-opt:hover{border-color:rgba(61,220,132,.3);background:rgba(61,220,132,.05)}
@@ -149,15 +124,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .donate-opt-name{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:2px}
 .donate-opt-sub{font-size:12px;color:var(--mu)}
 .donate-opt-arr{color:var(--mu);font-size:14px}
-
-/* Email display */
 .email-display{background:rgba(61,220,132,.06);border:1px solid rgba(61,220,132,.2);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
 .email-addr{font-size:16px;font-weight:600;color:var(--gn);font-family:monospace;letter-spacing:.02em}
 .copy-btn{background:rgba(61,220,132,.15);border:1px solid rgba(61,220,132,.3);color:var(--gn);padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s;font-family:inherit;white-space:nowrap}
 .copy-btn:hover{background:rgba(61,220,132,.25)}
 .contact-note{font-size:13px;color:var(--mu);line-height:1.6}
-
-/* Roadmap */
 .roadmap{display:flex;flex-direction:column;gap:10px}
 .roadmap-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
 .roadmap-item:last-child{border-bottom:none}
@@ -170,8 +141,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .roadmap-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
 .roadmap-badge.soon{background:rgba(61,220,132,.15);color:var(--gn)}
 .roadmap-badge.planned{background:rgba(91,141,239,.15);color:var(--bl)}
-
-/* FOOTER */
 footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;position:relative;z-index:1;gap:20px}
 .footer-logo{font-family:'DM Serif Display',serif;font-size:20px;cursor:pointer}
 .footer-logo span{color:var(--gn)}
@@ -179,11 +148,8 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
 .footer-links a{color:var(--mu);text-decoration:none;font-size:13px;transition:color .2s;cursor:pointer}
 .footer-links a:hover{color:var(--tx)}
 .footer-copy{font-size:12px;color:var(--hi)}
-
-/* FADE ANIMATIONS */
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-
 @media(max-width:600px){
   nav{padding:14px 20px}
   .nav-links{display:none}
@@ -207,13 +173,12 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
     <a onclick="showPage('home');scrollTo('#how')">How it works</a>
     <a onclick="showPage('home');scrollTo('#download')">Download</a>
     <a onclick="showPage('contact')">Contact us</a>
-    <a onclick="showPage('home');scrollTo('#download')" class="nav-cta">Download free</a>
+    <button class="nav-cta" onclick="downloadApp()">Download free</button>
   </div>
 </nav>
 
-<!-- ══════════════ HOME PAGE ══════════════ -->
+<!-- HOME PAGE -->
 <div id="pg-home" class="pg active">
-
   <section class="hero">
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
@@ -270,7 +235,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
       <div class="feat fade-up" style="transition-delay:.2s"><span class="feat-icon">📊</span><h3>Instant profit calc</h3><p>See your real profit after Amazon FBA fees, referral fees, and shipping — before you spend a dollar. No guesswork, no spreadsheets.</p><span class="feat-tag">Real-time</span></div>
       <div class="feat fade-up"><span class="feat-icon">📦</span><h3>Deal tracker</h3><p>Log every product with notes, categories, and images. Filter by category. Full deal history with dates, costs, and profit estimates.</p><span class="feat-tag">With CSV export</span></div>
       <div class="feat fade-up" style="transition-delay:.1s"><span class="feat-icon">📋</span><h3>Image clipboard</h3><p>Save bulk listing screenshots to a clipboard tab. Auto-expires after 24 hours. Attach saved images directly to your tracked products.</p><span class="feat-tag">24h auto-expire</span></div>
-      <div class="feat fade-up" style="transition-delay:.2s"><span class="feat-icon">🛡️</span><h3>Budget safeguards</h3><p>Set your budget and Vendiq warns you at 75%, alerts at 90%, and fully pauses the system at 100% — so you never overspend.</p><span class="feat-tag">3-level protection</span></div>
+      <div class="feat fade-up" style="transition-delay:.2s"><span class="feat-icon">🛡️</span><h3>Budget safeguards</h3><p>Set your budget and Vendiq warns you at 75%, alerts at 90%, and fully pauses at 100% — so you never accidentally overspend.</p><span class="feat-tag">3-level protection</span></div>
     </div>
   </section>
 
@@ -316,27 +281,24 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
   </footer>
 </div>
 
-<!-- ══════════════ CONTACT PAGE ══════════════ -->
+<!-- CONTACT PAGE -->
 <div id="pg-contact" class="pg">
   <div class="contact-pg">
     <div class="contact-orb1"></div>
     <div class="contact-orb2"></div>
     <div class="contact-inner">
-
       <div class="contact-eyebrow">Contact &amp; Support</div>
       <h1>Built with <em>passion.</em><br>Supported by you.</h1>
       <p class="contact-intro">
         Vendiq was built entirely in my <strong>free time</strong> — a solo project born out of a real need to make Amazon FBA research faster and smarter. It's free to use and always will be. If it's helped you find a good deal or saved you time, any support means the world and goes directly toward keeping the app alive and improving it.<br><br>
         There's a lot more coming — this is just the beginning.
       </p>
-
       <div class="contact-grid">
 
-        <!-- Donate -->
         <div class="contact-card">
           <div class="contact-card-icon">☕</div>
           <h2>Support Vendiq</h2>
-          <p>Vendiq is free and will stay that way. If it's been useful to you, a small contribution helps cover development time, API costs, and future improvements. Every bit counts.</p>
+          <p>Vendiq is free and will stay that way. If it's been useful to you, a small contribution helps cover development time and future improvements. Every bit counts.</p>
           <div class="donate-opts">
             <a class="donate-opt" href="https://ko-fi.com/vendiq" target="_blank" rel="noopener">
               <div class="donate-opt-icon">☕</div>
@@ -356,19 +318,17 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
           </div>
         </div>
 
-        <!-- Contact -->
         <div class="contact-card">
           <div class="contact-card-icon">✉️</div>
           <h2>Get in touch</h2>
           <p>Have a question, found a bug, or want to suggest a feature? Reach out directly — I read every email and genuinely appreciate the feedback.</p>
           <div class="email-display">
-            <div class="email-addr"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a8decdc6ccc1d9e8dcdddcc986c1c7">[email&#160;protected]</a></div>
+            <div class="email-addr">vendiq@tuta.io</div>
             <button class="copy-btn" onclick="copyEmail()">Copy</button>
           </div>
-          <p class="contact-note">Response time is typically within 48 hours. For the fastest help, include your device type and a description of the issue.</p>
+          <p class="contact-note">Response time is typically within 48 hours. Include your device type and a description of the issue for the fastest help.</p>
         </div>
 
-        <!-- What's coming -->
         <div class="contact-card full">
           <div class="contact-card-icon">🗺️</div>
           <h2>What's coming next</h2>
@@ -380,7 +340,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
             </div>
             <div class="roadmap-item">
               <div class="roadmap-dot coming"></div>
-              <div class="roadmap-text"><strong>Auto-reorder alerts <span class="roadmap-badge soon">Coming soon</span></strong><span>Get reminded when it's time to restock a product based on your sales pace</span></div>
+              <div class="roadmap-text"><strong>Auto-reorder alerts <span class="roadmap-badge soon">Coming soon</span></strong><span>Get reminded when it's time to restock based on your sales pace</span></div>
             </div>
             <div class="roadmap-item">
               <div class="roadmap-dot planned"></div>
@@ -400,7 +360,6 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
       </div>
     </div>
   </div>
-
   <footer>
     <div class="footer-logo" onclick="showPage('home')">Vend<span>iq</span></div>
     <div class="footer-links">
@@ -413,8 +372,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Page switching
+<script>
 function showPage(name){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));
   document.getElementById('pg-'+name).classList.add('active');
@@ -429,7 +387,6 @@ function scrollTo(hash){
   },100);
 }
 
-// Download app
 async function downloadApp(){
   try{
     const res=await fetch('vendiq.html');
@@ -443,11 +400,11 @@ async function downloadApp(){
     } else { fallback(); }
   } catch(e){ fallback(); }
 }
+
 function fallback(){
   alert('To get the Vendiq app:\n\nEmail vendiq@tuta.io and we\'ll send it right to you!');
 }
 
-// Copy email
 function copyEmail(){
   navigator.clipboard.writeText('vendiq@tuta.io').then(()=>{
     const btn=document.querySelector('.copy-btn');
@@ -457,7 +414,16 @@ function copyEmail(){
   });
 }
 
-// Scroll animations
 function initObserver(){
   const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.12});
+  document.querySelectorAll('.fade-up').forEach(el=>{
+    el.classList.remove('visible');
+    obs.observe(el);
+  });
+}
+initObserver();
+</script>
+</body>
+</html>
