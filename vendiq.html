@@ -19,8 +19,7 @@
   --rd:#ff5f5f;--rd-bg:#2a0a0a;--rd-bd:#5c1a1a;
   --bl:#5b8def;--bl-bg:#0a1a2e;--bl-bd:#1a3a6e;
   --pu:#a78bfa;--pu-bg:#1a0a2e;--pu-bd:#3a1a6e;
-  --ac:#3ddc84;
-  --r:14px;--rs:10px;--rx:7px;
+  --ac:#3ddc84;--r:14px;--rs:10px;--rx:7px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overscroll-behavior:none}
@@ -38,8 +37,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
 .ni{font-size:16px;line-height:1}
 .card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:15px;margin-bottom:10px}
 .ct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin-bottom:13px}
-.f{margin-bottom:11px}
-.f:last-child{margin-bottom:0}
+.f{margin-bottom:11px}.f:last-child{margin-bottom:0}
 .f label{display:block;font-size:12px;color:var(--mu);margin-bottom:5px;font-weight:500}
 .f input,.f select,.f textarea{width:100%;padding:11px 13px;font-size:16px;background:var(--s2);border:1px solid var(--b1);border-radius:var(--rs);color:var(--tx);outline:none;transition:border-color .2s;-webkit-appearance:none;font-family:inherit}
 .f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ac)}
@@ -81,7 +79,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
 .btn.s{background:var(--s2);color:var(--tx);border:1px solid var(--b2)}
 .btn.g{background:none;color:var(--mu);border:1px solid var(--b1)}
 .btn.d{background:var(--rd-bg);color:var(--rd);border:1px solid var(--rd-bd)}
-.btn.b{background:var(--bl-bg);color:var(--bl);border:1px solid var(--bl-bd)}
+.btn.bl-btn{background:var(--bl-bg);color:var(--bl);border:1px solid var(--bl-bd)}
 .btn:disabled{opacity:.3;pointer-events:none}
 .br{display:flex;gap:8px;margin-top:11px}
 .br .btn{flex:1}
@@ -117,7 +115,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
 .ci-name{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ci-age{font-size:11px;color:var(--mu);margin-top:2px}
 .ci-use{width:100%;padding:8px;background:none;border:none;border-top:1px solid var(--b1);color:var(--bl);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
-.scan-btn{width:100%;padding:12px;background:var(--s1);border:1px solid var(--b2);border-radius:var(--r);color:var(--mu);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;margin-bottom:10px;transition:border-color .2s,color .2s}
+.scan-btn{width:100%;padding:12px;background:var(--s1);border:1px solid var(--b2);border-radius:var(--r);color:var(--mu);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;margin-bottom:10px}
 .scan-btn:active{border-color:var(--bl);color:var(--bl)}
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:flex-end;justify-content:center}
 .modal-bg.hide{display:none}
@@ -131,14 +129,11 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
 .sr{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--b1)}
 .sr:last-child{border-bottom:none}
 .sr-lb{font-size:14px;font-weight:500}.sr-sub{font-size:12px;color:var(--mu);margin-top:2px}
-.sr-in{background:var(--s2);border:1px solid var(--b1);border-radius:var(--rx);padding:8px 11px;font-size:14px;color:var(--tx);width:110px;outline:none;text-align:right;-webkit-appearance:none;font-family:inherit}
+.sr-in{background:var(--s2);border:1px solid var(--b1);border-radius:var(--rx);padding:8px 11px;font-size:14px;color:var(--tx);outline:none;text-align:right;-webkit-appearance:none;font-family:inherit}
 .sr-in:focus{border-color:var(--ac)}
-.api-wrap{position:relative}
-.api-wrap input{width:100%;padding:11px 42px 11px 13px;font-size:14px;background:var(--s2);border:1px solid var(--b1);border-radius:var(--rs);color:var(--tx);outline:none;font-family:monospace}
-.api-wrap input:focus{border-color:var(--ac)}
-.api-eye{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--mu);cursor:pointer;font-size:15px}
-.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:5px}
-.dot.gn{background:var(--gn)}.dot.rd{background:var(--rd)}.dot.am{background:var(--am)}
+.server-status{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:8px}
+.sdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sdot.gn{background:var(--gn)}.sdot.rd{background:var(--rd)}.sdot.am{background:var(--am)}
 .is{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--b1);align-items:flex-start}
 .is:last-child{border-bottom:none}
 .isn{width:23px;height:23px;border-radius:50%;background:var(--s2);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--ac);flex-shrink:0}
@@ -151,71 +146,52 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
 .page{display:none}.page.on{display:block}
 #toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--s3);border:1px solid var(--b2);border-radius:20px;padding:9px 18px;font-size:13px;font-weight:500;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;z-index:60}
 #toast.on{opacity:1}
-.af{border-color:var(--ac) !important;animation:af 1s ease-out}
+.af{border-color:var(--ac)!important;animation:af 1s ease-out}
 @keyframes af{0%{box-shadow:0 0 0 0 rgba(61,220,132,.4)}100%{box-shadow:0 0 0 5px rgba(61,220,132,0)}}
 #sd{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:100;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center}
 #sd.on{display:flex}
-
-/* ── HELP PAGE ── */
-.help-hero{background:linear-gradient(135deg,var(--gn-bg) 0%,var(--bl-bg) 100%);border:1px solid var(--gn-bd);border-radius:var(--r);padding:22px 18px;margin-bottom:14px;text-align:center}
-.help-logo{font-size:36px;font-weight:800;letter-spacing:-1px;background:linear-gradient(90deg,var(--gn),var(--bl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
-.help-tag{font-size:13px;color:var(--mu);line-height:1.5}
-.step-card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
-.step-hdr{display:flex;align-items:center;gap:12px;padding:14px 15px;cursor:pointer;user-select:none}
-.step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0}
-.step-num.s1{background:var(--bl-bg);color:var(--bl);border:1px solid var(--bl-bd)}
-.step-num.s2{background:var(--gn-bg);color:var(--gn);border:1px solid var(--gn-bd)}
-.step-num.s3{background:var(--am-bg);color:var(--am);border:1px solid var(--am-bd)}
-.step-num.s4{background:var(--pu-bg);color:var(--pu);border:1px solid var(--pu-bd)}
-.step-num.s5{background:var(--gn-bg);color:var(--gn);border:1px solid var(--gn-bd)}
-.step-title{flex:1}
-.step-title strong{font-size:15px;font-weight:700;display:block;margin-bottom:1px}
-.step-title span{font-size:12px;color:var(--mu)}
-.step-chevron{font-size:12px;color:var(--mu);transition:transform .2s}
-.step-chevron.open{transform:rotate(90deg)}
-.step-body{padding:0 15px 16px;display:none}
-.step-body.open{display:block}
-.step-body p{font-size:14px;color:var(--mu);line-height:1.7;margin-bottom:12px}
-.step-body p strong{color:var(--tx)}
-.mock{background:var(--s2);border:1px solid var(--b1);border-radius:var(--rs);padding:12px;margin-bottom:10px}
-.mock-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:10px}
-.mock-row{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--s3);border-radius:var(--rx);margin-bottom:6px}
+.help-step{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+.help-hdr{display:flex;align-items:center;gap:12px;padding:14px 15px;cursor:pointer}
+.help-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+.help-num.n1{background:var(--bl-bg);color:var(--bl);border:1px solid var(--bl-bd)}
+.help-num.n2{background:var(--gn-bg);color:var(--gn);border:1px solid var(--gn-bd)}
+.help-num.n3{background:var(--am-bg);color:var(--am);border:1px solid var(--am-bd)}
+.help-num.n4{background:var(--pu-bg);color:var(--pu);border:1px solid var(--pu-bd)}
+.help-num.n5{background:var(--gn-bg);color:var(--gn);border:1px solid var(--gn-bd)}
+.help-title{flex:1}.help-title strong{font-size:15px;font-weight:700;display:block;margin-bottom:1px}
+.help-title span{font-size:12px;color:var(--mu)}
+.help-chev{font-size:12px;color:var(--mu);transition:transform .2s}
+.help-chev.open{transform:rotate(90deg)}
+.help-body{padding:0 15px 15px;display:none;font-size:14px;color:var(--mu);line-height:1.7}
+.help-body.open{display:block}
+.help-body strong{color:var(--tx)}
+.mock{background:var(--s2);border:1px solid var(--b1);border-radius:var(--rs);padding:11px;margin:10px 0}
+.mock-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mu);margin-bottom:9px}
+.mock-row{display:flex;align-items:center;gap:10px;padding:7px 9px;background:var(--s3);border-radius:var(--rx);margin-bottom:5px;font-size:12px}
 .mock-row:last-child{margin-bottom:0}
-.mock-ic{font-size:18px;flex-shrink:0}
-.mock-txt{flex:1}
-.mock-txt strong{font-size:13px;display:block}
+.mock-ic{font-size:16px;flex-shrink:0}
+.mock-txt{flex:1}.mock-txt strong{display:block;font-size:13px}
 .mock-txt span{font-size:11px;color:var(--mu)}
-.mock-val{font-size:14px;font-weight:700}
-.mock-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.mock-card{background:var(--s3);border-radius:var(--rx);padding:10px;text-align:center}
-.mock-card-lbl{font-size:10px;color:var(--mu);margin-bottom:4px}
-.mock-card-val{font-size:18px;font-weight:700}
-.mock-verdict{border-radius:var(--rx);padding:10px 12px;text-align:center}
-.mock-verdict.buy{background:var(--gn-bg);border:1px solid var(--gn-bd);color:var(--gn)}
-.mock-verdict.warn{background:var(--am-bg);border:1px solid var(--am-bd);color:var(--am)}
-.tip-box{background:var(--bl-bg);border:1px solid var(--bl-bd);border-radius:var(--rx);padding:11px 13px;margin-top:10px;font-size:13px;color:var(--bl);line-height:1.5}
-.tip-box strong{display:block;margin-bottom:3px;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-.faq-row{padding:13px 0;border-bottom:1px solid var(--b1)}
+.mock-val{font-size:13px;font-weight:700}
+.mock-cards{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px}
+.mock-card{background:var(--s3);border-radius:var(--rx);padding:9px;text-align:center}
+.mock-card-lbl{font-size:9px;color:var(--mu);margin-bottom:3px}
+.mock-card-val{font-size:17px;font-weight:700}
+.mock-verdict{border-radius:var(--rx);padding:9px;text-align:center;font-size:12px;font-weight:700}
+.mock-verdict.buy{background:var(--gn-bg);color:var(--gn)}
+.tip{background:var(--bl-bg);border:1px solid var(--bl-bd);border-radius:var(--rx);padding:10px 12px;margin-top:10px;font-size:12px;color:var(--bl);line-height:1.5}
+.tip strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.faq-row{padding:12px 0;border-bottom:1px solid var(--b1)}
 .faq-row:last-child{border-bottom:none}
-.faq-q{font-size:14px;font-weight:600;margin-bottom:5px}
+.faq-q{font-size:14px;font-weight:600;margin-bottom:4px}
 .faq-a{font-size:13px;color:var(--mu);line-height:1.6}
-.support-card{background:var(--pu-bg);border:1px solid var(--pu-bd);border-radius:var(--r);padding:20px 18px;text-align:center;margin-top:14px}
-.support-icon{font-size:32px;margin-bottom:10px}
-.support-title{font-size:17px;font-weight:700;color:var(--pu);margin-bottom:6px}
-.support-sub{font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:16px}
-.support-email{font-size:13px;color:var(--mu);margin-top:10px}
-.support-email a{color:var(--pu);text-decoration:none;font-weight:500}
-.donate-card{background:var(--am-bg);border:1px solid var(--am-bd);border-radius:var(--r);padding:20px 18px;text-align:center;margin-top:10px}
-.donate-icon{font-size:32px;margin-bottom:10px}
-.donate-title{font-size:17px;font-weight:700;color:var(--am);margin-bottom:6px}
-.donate-sub{font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:16px}
-.donate-btn{display:inline-block;background:var(--am);color:#000;font-weight:700;font-size:15px;padding:13px 28px;border-radius:var(--rs);text-decoration:none;transition:opacity .15s}
-.donate-btn:active{opacity:.8}
-.donate-note{font-size:11px;color:var(--mu);margin-top:10px}
+.support-box{background:var(--pu-bg);border:1px solid var(--pu-bd);border-radius:var(--r);padding:20px;text-align:center;margin-top:14px}
+.support-box h3{font-size:16px;font-weight:700;color:var(--pu);margin-bottom:6px}
+.support-box p{font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:14px}
+.support-email{font-size:14px;font-weight:600;color:var(--pu);background:rgba(167,139,250,.1);border:1px solid var(--pu-bd);border-radius:var(--rs);padding:10px 16px;display:inline-block;margin-bottom:12px;font-family:monospace}
 </style>
 </head>
 <body>
-
 <div id="sd">
   <div style="font-size:50px;margin-bottom:14px">🛑</div>
   <div style="font-size:22px;font-weight:700;color:var(--rd);margin-bottom:8px">System paused</div>
@@ -235,9 +211,8 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
         <option>Office &amp; school</option><option>Food &amp; grocery</option><option>Other</option>
       </select>
     </div>
-    <div class="f"><label>Notes (optional)</label><textarea id="mNotes" placeholder="Supplier name, where you found it, deal details…"></textarea></div>
-    <div class="f">
-      <label>Attach clipboard images</label>
+    <div class="f"><label>Notes (optional)</label><textarea id="mNotes" placeholder="Supplier name, deal details, reorder timeline…"></textarea></div>
+    <div class="f"><label>Attach clipboard images</label>
       <div id="mClipPick" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;min-height:44px;align-items:center"></div>
     </div>
     <div class="br">
@@ -261,6 +236,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
     <!-- SCOUT -->
     <div id="p-scout" class="page on">
       <div id="aiBox" style="display:none"></div>
+      <div id="noServer" class="ais warn" style="display:none">⚠️ Add your server URL in <strong>&nbsp;Settings&nbsp;</strong> to enable AI search.</div>
       <div class="sw">
         <span class="si-ic">🔍</span>
         <input class="si" id="srch" type="text" placeholder="Search any product — AI finds both prices…" autocomplete="off" oninput="onSrch(this)">
@@ -293,7 +269,6 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
         📷 &nbsp;Scan bulk supplier screenshot
         <input type="file" id="imgUp" accept="image/*" style="display:none" onchange="handleScan(this)">
       </label>
-      <div id="noKey" class="ais warn" style="display:none">⚠️ Add your free API key in <strong>&nbsp;Settings&nbsp;</strong> to enable AI search &amp; scanning.</div>
       <div class="sh">Deal details</div>
       <div class="card">
         <div class="f"><label>Product name</label><input type="text" id="pName" placeholder="e.g. ChapStick Original 3-pack"></div>
@@ -348,202 +323,159 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
 
     <!-- HELP -->
     <div id="p-help" class="page">
-
-      <div class="help-hero">
-        <div class="help-logo">Vendiq</div>
-        <div class="help-tag">Your Amazon FBA deal-finding assistant.<br>Find it cheap, sell it high, track your profits.</div>
+      <div style="background:linear-gradient(135deg,var(--gn-bg),var(--bl-bg));border:1px solid var(--gn-bd);border-radius:var(--r);padding:22px 18px;margin-bottom:14px;text-align:center">
+        <div style="font-size:28px;font-weight:800;letter-spacing:-1px;color:var(--gn);margin-bottom:4px">Vendiq</div>
+        <div style="font-size:13px;color:var(--mu);line-height:1.5">Buy cheap in bulk. Sell on Amazon. Keep the profit.</div>
       </div>
 
-      <!-- Step 1 -->
-      <div class="step-card">
-        <div class="step-hdr" onclick="toggleStep('h1')">
-          <div class="step-num s1">1</div>
-          <div class="step-title"><strong>Search for a product</strong><span>AI finds Amazon + bulk prices simultaneously</span></div>
-          <div class="step-chevron" id="ch-h1">›</div>
+      <div class="help-step">
+        <div class="help-hdr" onclick="toggleHelp('h1')">
+          <div class="help-num n1">1</div>
+          <div class="help-title"><strong>Search a product</strong><span>AI finds Amazon + bulk prices</span></div>
+          <div class="help-chev" id="ch-h1">›</div>
         </div>
-        <div class="step-body" id="h1">
-          <p>On the <strong>Scout tab</strong>, type any product into the search bar — like "dish soap" or "chapstick 3-pack". Vendiq searches <strong>Amazon</strong> for the sell price and <strong>wholesale suppliers</strong> (Alibaba, Sam's Club, Costco Business) for the bulk cost at the same time.</p>
+        <div class="help-body" id="h1">
+          <p>On the <strong>Scout tab</strong>, type any product into the search bar. Vendiq searches <strong>Amazon</strong> for the sell price and <strong>wholesale suppliers</strong> at the same time.</p>
           <div class="mock">
-            <div class="mock-label">Example — searching "ChapStick 3-pack"</div>
+            <div class="mock-lbl">Example — "ChapStick 3-pack"</div>
             <div class="mock-cards">
-              <div class="mock-card" style="background:var(--bl-bg);border:1px solid var(--bl-bd)">
-                <div class="mock-card-lbl" style="color:var(--bl)">🛒 Amazon price</div>
-                <div class="mock-card-val" style="color:var(--bl)">$7.49</div>
-              </div>
-              <div class="mock-card" style="background:var(--gn-bg);border:1px solid var(--gn-bd)">
-                <div class="mock-card-lbl" style="color:var(--gn)">📦 Bulk price</div>
-                <div class="mock-card-val" style="color:var(--gn)">$1.85</div>
-              </div>
+              <div class="mock-card" style="background:var(--bl-bg);border:1px solid var(--bl-bd)"><div class="mock-card-lbl" style="color:var(--bl)">🛒 Amazon</div><div class="mock-card-val" style="color:var(--bl)">$7.49</div></div>
+              <div class="mock-card" style="background:var(--gn-bg);border:1px solid var(--gn-bd)"><div class="mock-card-lbl" style="color:var(--gn)">📦 Bulk</div><div class="mock-card-val" style="color:var(--gn)">$1.85</div></div>
             </div>
-            <div class="mock-verdict buy">✓ Buy it! — 38% margin · est. profit $230</div>
+            <div class="mock-verdict buy">✓ Buy it! — 38% margin · est. $230 profit</div>
           </div>
-          <div class="tip-box"><strong>💡 Tip</strong>Be specific in your search. "Dawn dish soap 19.4oz" gets better results than just "soap".</div>
+          <div class="tip"><strong>💡 Tip</strong>Be specific — "Dawn dish soap 19.4oz" gets better results than just "soap".</div>
         </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="step-card">
-        <div class="step-hdr" onclick="toggleStep('h2')">
-          <div class="step-num s2">2</div>
-          <div class="step-title"><strong>Scan a bulk listing</strong><span>Point your camera at any supplier screenshot</span></div>
-          <div class="step-chevron" id="ch-h2">›</div>
+      <div class="help-step">
+        <div class="help-hdr" onclick="toggleHelp('h2')">
+          <div class="help-num n2">2</div>
+          <div class="help-title"><strong>Scan a bulk listing</strong><span>Point camera at any supplier screenshot</span></div>
+          <div class="help-chev" id="ch-h2">›</div>
         </div>
-        <div class="step-body" id="h2">
-          <p>Found a great bulk deal on <strong>Alibaba, Sam's Club, Costco,</strong> or any supplier site? Take a screenshot, then tap <strong>"Scan bulk supplier screenshot"</strong> in the Scout tab. Vendiq reads the price, product name, and quantity from the image and autofills everything automatically.</p>
+        <div class="help-body" id="h2">
+          <p>Found a deal on <strong>Alibaba, Sam's Club, or Costco?</strong> Screenshot it, then tap "Scan bulk supplier screenshot." Vendiq reads the price and autofills everything automatically. The image is also saved to your Clipboard.</p>
           <div class="mock">
-            <div class="mock-label">What happens when you scan</div>
-            <div class="mock-row"><div class="mock-ic">📷</div><div class="mock-txt"><strong>You upload screenshot</strong><span>From Alibaba or Sam's Club</span></div></div>
-            <div class="mock-row"><div class="mock-ic">🤖</div><div class="mock-txt"><strong>AI reads the image</strong><span>Finds product name + bulk price</span></div></div>
-            <div class="mock-row"><div class="mock-ic">✅</div><div class="mock-txt"><strong>Fields autofill</strong><span>Bulk cost, name, size all filled in</span></div></div>
-            <div class="mock-row"><div class="mock-ic">💾</div><div class="mock-txt"><strong>Image saved to Clipboard</strong><span>Auto-expires after 24h</span></div></div>
+            <div class="mock-lbl">What happens when you scan</div>
+            <div class="mock-row"><div class="mock-ic">📷</div><div class="mock-txt"><strong>Upload screenshot</strong><span>From any supplier site</span></div></div>
+            <div class="mock-row"><div class="mock-ic">🤖</div><div class="mock-txt"><strong>AI reads the image</strong><span>Finds product + bulk price</span></div></div>
+            <div class="mock-row"><div class="mock-ic">✅</div><div class="mock-txt"><strong>Fields autofill instantly</strong><span>No typing needed</span></div></div>
           </div>
-          <div class="tip-box"><strong>💡 Tip</strong>Screenshots work best when the price and product name are clearly visible. Crop out extra clutter if needed.</div>
         </div>
       </div>
 
-      <!-- Step 3 -->
-      <div class="step-card">
-        <div class="step-hdr" onclick="toggleStep('h3')">
-          <div class="step-num s3">3</div>
-          <div class="step-title"><strong>Review the profit breakdown</strong><span>Know exactly what you'll make before you buy</span></div>
-          <div class="step-chevron" id="ch-h3">›</div>
+      <div class="help-step">
+        <div class="help-hdr" onclick="toggleHelp('h3')">
+          <div class="help-num n3">3</div>
+          <div class="help-title"><strong>Review profit breakdown</strong><span>Know exactly what you'll make</span></div>
+          <div class="help-chev" id="ch-h3">›</div>
         </div>
-        <div class="step-body" id="h3">
-          <p>Once prices are filled in, enter the <strong>number of units</strong> you want to buy. Vendiq instantly calculates your profit after Amazon's FBA fulfillment fee, referral fee, and shipping cost.</p>
+        <div class="help-body" id="h3">
+          <p>Enter the <strong>number of units</strong> you want to buy. Vendiq calculates profit after Amazon's FBA fee, referral fee, and shipping cost automatically.</p>
           <div class="mock">
-            <div class="mock-label">Profit breakdown example — 100 units</div>
-            <div class="mock-row"><div class="mock-ic">💰</div><div class="mock-txt"><strong>Total investment</strong><span>Bulk cost + shipping to Amazon</span></div><div class="mock-val">$235</div></div>
-            <div class="mock-row"><div class="mock-ic">📦</div><div class="mock-txt"><strong>FBA fee per unit</strong><span>Amazon picks, packs, ships it</span></div><div class="mock-val rd">−$3.22</div></div>
-            <div class="mock-row"><div class="mock-ic">🏷️</div><div class="mock-txt"><strong>Referral fee (15%)</strong><span>Amazon's cut of each sale</span></div><div class="mock-val rd">−$1.12</div></div>
-            <div class="mock-row"><div class="mock-ic">✨</div><div class="mock-txt"><strong>Your profit per unit</strong><span>What stays in your pocket</span></div><div class="mock-val gn">+$2.30</div></div>
+            <div class="mock-lbl">Breakdown — 100 units</div>
+            <div class="mock-row"><div class="mock-ic">💰</div><div class="mock-txt"><strong>Total investment</strong></div><div class="mock-val">$235</div></div>
+            <div class="mock-row"><div class="mock-ic">📦</div><div class="mock-txt"><strong>FBA fee / unit</strong></div><div class="mock-val rd">−$3.22</div></div>
+            <div class="mock-row"><div class="mock-ic">🏷️</div><div class="mock-txt"><strong>Referral fee (15%)</strong></div><div class="mock-val rd">−$1.12</div></div>
+            <div class="mock-row"><div class="mock-ic">✨</div><div class="mock-txt"><strong>Your profit / unit</strong></div><div class="mock-val gn">+$2.30</div></div>
           </div>
-          <div class="tip-box"><strong>💡 Tip</strong>Set your minimum margin in Settings (default 25%). Vendiq will warn you if a deal falls below it and flag risky purchases automatically.</div>
+          <div class="tip"><strong>💡 Tip</strong>Set your minimum margin % in Settings. Vendiq warns you if a deal falls below it.</div>
         </div>
       </div>
 
-      <!-- Step 4 -->
-      <div class="step-card">
-        <div class="step-hdr" onclick="toggleStep('h4')">
-          <div class="step-num s4">4</div>
-          <div class="step-title"><strong>Add to tracker</strong><span>Log the deal with notes, category &amp; images</span></div>
-          <div class="step-chevron" id="ch-h4">›</div>
+      <div class="help-step">
+        <div class="help-hdr" onclick="toggleHelp('h4')">
+          <div class="help-num n4">4</div>
+          <div class="help-title"><strong>Add to tracker</strong><span>Log deal with notes, category &amp; images</span></div>
+          <div class="help-chev" id="ch-h4">›</div>
         </div>
-        <div class="step-body" id="h4">
-          <p>Tap <strong>"Add to tracker"</strong> to log the deal. You can add a <strong>category</strong> (like Personal Care or Cleaning Supplies), write <strong>notes</strong> about the supplier or deal terms, and attach <strong>images from your Clipboard</strong> for reference.</p>
-          <div class="mock">
-            <div class="mock-label">Tracker entry example</div>
-            <div class="mock-row"><div class="mock-ic">🧴</div><div class="mock-txt"><strong>ChapStick Original 3-pack</strong><span>Personal care · 100 units · 3/20/2026</span></div><div class="mock-val gn">$230</div></div>
-            <div style="font-size:12px;color:var(--mu);padding:8px 0 0;line-height:1.6">Notes: Found on Alibaba — seller "TopBeauty Store", MOQ 50 units, ships in 7 days. Check reorder every 3 weeks.</div>
-          </div>
-          <div class="tip-box"><strong>💡 Tip</strong>Use notes to store the supplier's name, link, reorder time, and any deal terms. Tap a product in the Tracker to expand its details and images.</div>
+        <div class="help-body" id="h4">
+          <p>Tap <strong>"Add to tracker"</strong> to log the deal. Add a category, write notes about the supplier, and attach clipboard images for reference. Tap any product in the Tracker to expand its full details.</p>
+          <div class="tip"><strong>💡 Tip</strong>Use notes to store the supplier link, reorder time, and deal terms. You'll thank yourself later.</div>
         </div>
       </div>
 
-      <!-- Step 5 -->
-      <div class="step-card">
-        <div class="step-hdr" onclick="toggleStep('h5')">
-          <div class="step-num s5">5</div>
-          <div class="step-title"><strong>Track &amp; export</strong><span>Monitor spending, profits, and deal history</span></div>
-          <div class="step-chevron" id="ch-h5">›</div>
+      <div class="help-step">
+        <div class="help-hdr" onclick="toggleHelp('h5')">
+          <div class="help-num n5">5</div>
+          <div class="help-title"><strong>Track &amp; export</strong><span>Monitor spending, profits, deal history</span></div>
+          <div class="help-chev" id="ch-h5">›</div>
         </div>
-        <div class="step-body" id="h5">
-          <p>The <strong>Tracker tab</strong> shows your total invested, estimated profits, number of deals, and average margin. Filter by category to see how each product type is performing. When you're ready, export everything to a <strong>CSV spreadsheet</strong> from Settings.</p>
+        <div class="help-body" id="h5">
+          <p>The <strong>Tracker tab</strong> shows total invested, estimated profits, and avg margin. Filter by category. Export everything to a <strong>CSV spreadsheet</strong> from Settings anytime.</p>
           <div class="mock">
-            <div class="mock-label">Tracker summary example</div>
+            <div class="mock-lbl">Summary example</div>
             <div class="mock-cards">
               <div class="mock-card"><div class="mock-card-lbl">Est. profit</div><div class="mock-card-val gn">$840</div></div>
               <div class="mock-card"><div class="mock-card-lbl">Invested</div><div class="mock-card-val">$1,200</div></div>
-              <div class="mock-card"><div class="mock-card-lbl">Products</div><div class="mock-card-val">6</div></div>
-              <div class="mock-card"><div class="mock-card-lbl">Avg margin</div><div class="mock-card-val gn">35%</div></div>
             </div>
           </div>
-          <div class="tip-box"><strong>💡 Safeguards</strong>Vendiq warns you at 75% and 90% of your budget, and pauses the system at 100% so you never accidentally overspend.</div>
+          <div class="tip"><strong>🛡️ Safeguards</strong>Vendiq warns at 75% budget, alerts at 90%, and fully pauses at 100% so you never overspend.</div>
         </div>
       </div>
 
-
-      <!-- Get the App -->
-      <div class="sh">Get Vendiq</div>
-      <div class="card" style="text-align:center">
-        <div style="font-size:28px;margin-bottom:10px">📲</div>
-        <div style="font-size:15px;font-weight:700;margin-bottom:6px">Share Vendiq with anyone</div>
-        <div style="font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:16px">Vendiq is a single file — no App Store, no sign-up. Download it and send it to anyone who wants to use it.</div>
-        <div style="display:flex;gap:8px">
-          <button class="btn p" onclick="downloadApp()" style="flex:1">⬇ Download Vendiq</button>
-          <button class="btn b" onclick="shareApp()" id="shareBtn" style="flex:1">↗ Share</button>
-        </div>
-        <div style="font-size:12px;color:var(--mu);margin-top:10px">Open the downloaded file in Safari (iPhone) or Chrome (Android) to install</div>
-      </div>
-
-      <!-- FAQ -->
       <div class="sh">Common questions</div>
       <div class="card">
-        <div class="faq-row"><div class="faq-q">Do I need to pay for the API key?</div><div class="faq-a">Anthropic offers a free tier. For light daily use, the free credits are typically enough to get started. Visit console.anthropic.com to sign up.</div></div>
-        <div class="faq-row"><div class="faq-q">Are the prices 100% accurate?</div><div class="faq-a">AI search gives strong estimates, but always verify before purchasing — especially bulk prices, which vary by supplier and quantity. Use the scan feature for more precise numbers from actual listings.</div></div>
-        <div class="faq-row"><div class="faq-q">What is Amazon FBA?</div><div class="faq-a">Fulfilled by Amazon (FBA) means you ship your products to Amazon's warehouse, and they handle storage, packing, shipping, and customer service. You pay fees, but it's largely hands-off.</div></div>
-        <div class="faq-row"><div class="faq-q">Where do I actually buy in bulk?</div><div class="faq-a">Good starting places: Alibaba.com, Sam's Club, Costco Business Delivery, Faire, and wholesale directories like WorldwideBrands. Always order a small test batch first.</div></div>
-        <div class="faq-row" style="border-bottom:none"><div class="faq-q">How do I install Vendiq as an app?</div><div class="faq-a">On iPhone: open in Safari → Share → Add to Home Screen. On Android: open in Chrome → menu → Add to Home Screen. It works like a native app with no App Store needed.</div></div>
+        <div class="faq-row"><div class="faq-q">What is Amazon FBA?</div><div class="faq-a">Fulfilled by Amazon — you ship products to their warehouse, they handle storage, packing, and shipping. You pay fees but it's hands-off.</div></div>
+        <div class="faq-row"><div class="faq-q">Where do I buy in bulk?</div><div class="faq-a">Great starting points: Alibaba.com, Sam's Club, Costco Business Delivery, and Faire. Always order a small test batch first.</div></div>
+        <div class="faq-row"><div class="faq-q">Are the AI prices accurate?</div><div class="faq-a">They're strong estimates — always verify before purchasing, especially bulk prices which vary by supplier and quantity.</div></div>
+        <div class="faq-row" style="border-bottom:none"><div class="faq-q">How do I install Vendiq as an app?</div><div class="faq-a">iPhone: open in Safari → Share → Add to Home Screen. Android: Chrome menu → Add to Home Screen.</div></div>
       </div>
 
-      <!-- Support -->
-      <div class="support-card">
-        <div class="support-icon">💬</div>
-        <div class="support-title">Need help?</div>
-        <div class="support-sub">Have a question, found a bug, or want to suggest a feature? We'd love to hear from you. Tap below to send us an email.</div>
-        <button class="btn p" onclick="emailSupport()" style="max-width:260px;margin:0 auto">Email support</button>
-        <div class="support-email">or write directly to <a href="/cdn-cgi/l/email-protection#c5b3a0aba1acb485b1b0b1a4ebacaa"><span class="__cf_email__" data-cfemail="2157444f45485061555455400f484e">[email&#160;protected]</span></a></div>
+      <div class="support-box">
+        <div style="font-size:28px;margin-bottom:10px">💬</div>
+        <h3>Need help?</h3>
+        <p>Questions, bugs, or feature ideas — we read every message.</p>
+        <div class="support-email">vendiq@tuta.io</div>
+        <div style="font-size:12px;color:var(--mu)">Copy the address above and send us an email</div>
       </div>
-
-      <!-- Donate card -->
-      <div class="donate-card">
-        <div class="donate-icon">☕</div>
-        <div class="donate-title">Support Vendiq</div>
-        <div class="donate-sub">Vendiq is free to use. If it's helped you find profitable deals, consider buying the developer a coffee — it keeps the app alive and growing.</div>
-        <a href="https://ko-fi.com" target="_blank" class="donate-btn" onclick="openDonate(event)">Donate on Ko-fi</a>
-        <div class="donate-note">Ko-fi takes 0% — every cent goes directly to the developer.</div>
-      </div>
-
       <div style="height:10px"></div>
     </div>
 
     <!-- SETTINGS -->
     <div id="p-settings" class="page">
-      <div class="sh">AI features</div>
+      <div class="sh">Server connection</div>
       <div class="card">
-        <div class="ct">Anthropic API key</div>
-        <p style="font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:11px">Powers AI product search and screenshot scanning. Free tier available.</p>
-        <div style="font-size:13px;color:var(--mu);margin-bottom:11px;line-height:1.8">1. Go to <strong style="color:var(--tx)">console.anthropic.com</strong><br>2. Sign up free → API Keys → Create key<br>3. Paste below — stored locally, never shared</div>
-        <div class="api-wrap">
-          <input type="password" id="apiIn" placeholder="sk-ant-…" oninput="saveKey()">
-          <button class="api-eye" onclick="toggleKey()">👁</button>
+        <div class="ct">Vendiq server URL</div>
+        <p style="font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:11px">This connects the app to the AI backend. Paste your Railway server URL below.</p>
+        <div class="f">
+          <label>Server URL</label>
+          <input type="url" id="serverUrl" placeholder="https://your-server.up.railway.app" oninput="saveServer()">
         </div>
-        <div id="apiSt" style="font-size:12px;margin-top:7px;color:var(--mu)"></div>
+        <div class="server-status" id="serverStatus">
+          <div class="sdot am"></div><span>Not connected</span>
+        </div>
+        <button class="btn bl-btn" style="margin-top:10px" onclick="testServer()">Test connection</button>
       </div>
+
       <div class="sh">Budget &amp; guardrails</div>
       <div class="card">
-        <div class="sr"><div><div class="sr-lb">Total budget</div><div class="sr-sub">Max inventory spend</div></div><input class="sr-in" type="number" id="budgIn" value="500" oninput="updateBudget()"></div>
-        <div class="sr"><div><div class="sr-lb">Min profit margin</div><div class="sr-sub">Flag deals below this %</div></div><input class="sr-in" type="number" id="mmIn" value="25"></div>
+        <div class="sr"><div><div class="sr-lb">Total budget</div><div class="sr-sub">Max inventory spend</div></div><input class="sr-in" type="number" id="budgIn" value="500" style="width:110px" oninput="updateBudget()"></div>
+        <div class="sr"><div><div class="sr-lb">Min profit margin</div><div class="sr-sub">Flag deals below this %</div></div><input class="sr-in" type="number" id="mmIn" value="25" style="width:110px"></div>
         <div class="sr" style="border-bottom:none;flex-direction:column;align-items:stretch;gap:6px">
           <div class="bb-row"><span id="bbUsed">$0 used</span><span id="bbRem">$500 left</span></div>
           <div class="bb-t"><div class="bb-f" id="bbFill" style="width:0%;background:var(--gn)"></div></div>
         </div>
       </div>
+
       <div class="sh">Clipboard</div>
       <div class="card">
         <div class="sr"><div><div class="sr-lb">Image retention</div><div class="sr-sub">Auto-delete after</div></div>
-          <select id="retIn" class="sr-in" style="width:120px;text-align:left;padding:8px 9px" onchange="localStorage.setItem('fba_ret',this.value)">
+          <select id="retIn" class="sr-in" style="width:120px;text-align:left;padding:8px 9px" onchange="localStorage.setItem('v_ret',this.value)">
             <option value="24">24 hours</option><option value="48">48 hours</option><option value="168">7 days</option><option value="720">30 days</option><option value="0">Keep forever</option>
           </select>
         </div>
         <div class="sr" style="border-bottom:none"><div><div class="sr-lb">Stored images</div><div class="sr-sub" id="clipCnt">0 images</div></div><button class="btn d" style="width:auto;padding:7px 13px;font-size:13px" onclick="clearClip()">Clear all</button></div>
       </div>
+
       <div class="sh">Install as app</div>
       <div class="card">
         <div id="instWrap" style="display:none;margin-bottom:13px"><button class="btn p" onclick="doInstall()">Install on this device</button></div>
         <div class="is"><div class="isn">1</div><div class="ist"><strong>iPhone (Safari)</strong><br>Share → "Add to Home Screen" → Add</div></div>
         <div class="is"><div class="isn">2</div><div class="ist"><strong>Android (Chrome)</strong><br>Menu (⋮) → "Add to Home Screen" → Install</div></div>
-        <div class="is"><div class="isn">3</div><div class="ist"><strong>Publish officially</strong><br>Wrap with Expo. Google Play: $25 one-time · App Store: $99/yr.</div></div>
       </div>
+
       <div class="sh">Data</div>
       <div class="card" style="display:flex;gap:8px">
         <button class="btn s" onclick="exportCSV()" style="flex:1">Export CSV</button>
@@ -552,7 +484,6 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
     </div>
 
   </div>
-
   <nav class="nav">
     <button class="nb on" id="n-scout" onclick="showPage('scout')"><span class="ni">🔍</span>Scout</button>
     <button class="nb" id="n-tracker" onclick="showPage('tracker')"><span class="ni">📦</span>Tracker</button>
@@ -562,56 +493,59 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:-apple-sy
   </nav>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const FBA={small:3.22,large:4.75,oversized:6.50},REF=0.15;
 let ST={products:[],clipboard:[],budgetUsed:0,paused:false,selClip:[],filterCat:'All'};
 
 function load(){
-  try{ST.products=JSON.parse(localStorage.getItem('fba_p')||'[]');ST.clipboard=JSON.parse(localStorage.getItem('fba_c')||'[]');ST.budgetUsed=parseFloat(localStorage.getItem('fba_bu')||'0');}catch(e){}
+  try{
+    ST.products=JSON.parse(localStorage.getItem('v_p')||'[]');
+    ST.clipboard=JSON.parse(localStorage.getItem('v_c')||'[]');
+    ST.budgetUsed=parseFloat(localStorage.getItem('v_bu')||'0');
+  }catch(e){}
   expireClip();
 }
-function save(){localStorage.setItem('fba_p',JSON.stringify(ST.products));localStorage.setItem('fba_c',JSON.stringify(ST.clipboard));localStorage.setItem('fba_bu',ST.budgetUsed.toString());}
-function getKey(){return(localStorage.getItem('fba_key')||'').trim();}
-function saveKey(){localStorage.setItem('fba_key',document.getElementById('apiIn').value.trim());updateKeySt();}
-function toggleKey(){const i=document.getElementById('apiIn');i.type=i.type==='password'?'text':'password';}
+function save(){
+  localStorage.setItem('v_p',JSON.stringify(ST.products));
+  localStorage.setItem('v_c',JSON.stringify(ST.clipboard));
+  localStorage.setItem('v_bu',ST.budgetUsed.toString());
+}
+function getServer(){return(localStorage.getItem('v_server')||'').trim().replace(/\/$/,'');}
+function saveServer(){localStorage.setItem('v_server',document.getElementById('serverUrl').value.trim().replace(/\/$/,''));updateServerStatus();}
 function getBudget(){return parseFloat(document.getElementById('budgIn').value)||500;}
 function getMinM(){return parseFloat(document.getElementById('mmIn').value)||25;}
 
+// Install
 let dfi=null;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dfi=e;document.getElementById('instWrap').style.display='block';});
 function doInstall(){if(dfi){dfi.prompt();dfi.userChoice.then(()=>dfi=null);}}
 
+// Pages
 function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
   document.getElementById('p-'+n).classList.add('on');
   document.getElementById('n-'+n).classList.add('on');
-  const s={scout:'Find & track profitable deals',tracker:'Your products & spending',clip:'Saved listing images',help:'How to use Vendiq',settings:'API key, budget & install'};
+  const s={scout:'Find & track profitable deals',tracker:'Your products & spending',clip:'Saved listing images',help:'How to use Vendiq',settings:'Server, budget & install'};
   document.getElementById('hsub').textContent=s[n]||'';
   if(n==='tracker')renderTracker();
   if(n==='clip')renderClip();
-  if(n==='settings'){document.getElementById('apiIn').value=getKey();document.getElementById('retIn').value=localStorage.getItem('fba_ret')||'24';updateKeySt();updateClipCnt();}
+  if(n==='settings'){
+    document.getElementById('serverUrl').value=getServer();
+    document.getElementById('budgIn').value=getBudget();
+    document.getElementById('mmIn').value=getMinM();
+    document.getElementById('retIn').value=localStorage.getItem('v_ret')||'24';
+    updateServerStatus();updateClipCnt();
+  }
 }
 
-function toggleStep(id){
-  const body=document.getElementById(id),ch=document.getElementById('ch-'+id);
-  const open=body.classList.toggle('open');
-  ch.classList.toggle('open',open);
+function toggleHelp(id){
+  const b=document.getElementById(id),c=document.getElementById('ch-'+id);
+  const open=b.classList.toggle('open');
+  c.classList.toggle('open',open);
 }
 
-function emailSupport(){
-  const s=encodeURIComponent('Vendiq Support Request');
-  const b=encodeURIComponent('Hi Vendiq team,\n\n[Describe your question or issue here]\n\nApp version: Vendiq v1\nDevice: \nOS: ');
-  window.location.href='mailto:vendiq@tuta.io?subject='+s+'&body='+b;
-}
-function openDonate(e){
-  e.preventDefault();
-  // Replace with your actual Ko-fi URL once you set up your account at ko-fi.com
-  // Example: https://ko-fi.com/vendiq
-  const url='https://ko-fi.com';
-  window.open(url,'_blank');
-}
-
+// Budget
 function updateBudget(){
   const b=getBudget(),pct=b>0?(ST.budgetUsed/b)*100:0,rem=Math.max(0,b-ST.budgetUsed);
   document.getElementById('bbUsed').textContent='$'+ST.budgetUsed.toFixed(2)+' used';
@@ -622,41 +556,90 @@ function updateBudget(){
   f.style.background=pct>=90?'var(--rd)':pct>=75?'var(--am)':'var(--gn)';
 }
 
-async function aiCall(messages,useSearch){
-  const key=getKey();
-  if(!key.startsWith('sk-ant-'))throw new Error('no_key');
-  const body={model:'claude-sonnet-4-20250514',max_tokens:700,messages};
-  if(useSearch)body.tools=[{type:'web_search_20250305',name:'web_search'}];
-  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify(body)});
-  const d=await r.json();
-  return d.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+// Server status
+function updateServerStatus(){
+  const url=getServer(),el=document.getElementById('serverStatus'),w=document.getElementById('noServer');
+  if(url.startsWith('https://')||url.startsWith('http://')){
+    el.innerHTML='<div class="sdot am"></div><span>URL set — tap "Test connection" to verify</span>';
+    if(w)w.style.display='none';
+  } else {
+    el.innerHTML='<div class="sdot rd"></div><span>No server URL — AI search disabled</span>';
+    if(w)w.style.display='flex';
+  }
 }
-function pJSON(t){const m=(t.replace(/```json|```/g,'').trim()).match(/\{[\s\S]*\}/);if(!m)throw new Error('no json');return JSON.parse(m[0]);}
 
+async function testServer(){
+  const url=getServer();
+  if(!url){toast('Enter your server URL first');return;}
+  showAI('load','Testing connection…');
+  try{
+    const r=await fetch(url+'/health');
+    const d=await r.json();
+    if(d.ok){
+      showAI('ok','Connected! Server is running'+(d.keySet?' and API key is set':'— but API key is missing on server'));
+      document.getElementById('serverStatus').innerHTML='<div class="sdot gn"></div><span>Connected and ready</span>';
+      document.getElementById('noServer').style.display='none';
+    } else {
+      showAI('err','Server responded but something is wrong');
+    }
+  } catch(e){
+    showAI('err','Could not reach server. Check the URL.');
+    document.getElementById('serverStatus').innerHTML='<div class="sdot rd"></div><span>Connection failed</span>';
+  }
+}
+
+// API via server
+async function apiCall(type, query, imageData, mimeType){
+  const url=getServer();
+  if(!url)throw new Error('no_server');
+  const body={type,query,imageData,mimeType};
+  const r=await fetch(url+'/api/search',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(body)
+  });
+  const d=await r.json();
+  if(!d.ok)throw new Error(d.error||'Server error');
+  return d.data;
+}
+
+// Search
 let srchT=null;
-function onSrch(el){const v=el.value.trim();document.getElementById('srchCl').style.display=v?'block':'none';clearTimeout(srchT);if(v.length>2)srchT=setTimeout(()=>runDual(v),900);}
+function onSrch(el){
+  const v=el.value.trim();
+  document.getElementById('srchCl').style.display=v?'block':'none';
+  clearTimeout(srchT);
+  if(v.length>2)srchT=setTimeout(()=>runDual(v),900);
+}
 function clearSrch(){document.getElementById('srch').value='';document.getElementById('srchCl').style.display='none';}
 
 async function runDual(q){
-  if(!getKey().startsWith('sk-ant-')){document.getElementById('noKey').style.display='flex';return;}
-  document.getElementById('noKey').style.display='none';
+  if(!getServer()){document.getElementById('noServer').style.display='flex';return;}
+  document.getElementById('noServer').style.display='none';
   document.getElementById('cmpSection').style.display='block';
-  resetCard('amzPrc','amzSub','amzSrc','amzCard');resetCard('blkPrc','blkSub','blkSrc','blkCard');
+  resetCard('amzPrc','amzSub','amzSrc','amzCard');
+  resetCard('blkPrc','blkSub','blkSrc','blkCard');
   document.getElementById('cmpBar').style.display='none';
-  const [aR,bR]=await Promise.allSettled([searchAmz(q),searchBlk(q)]);
+  const [aR,bR]=await Promise.allSettled([apiCall('amazon',q),apiCall('bulk',q)]);
   const amz=aR.status==='fulfilled'?aR.value:null;
   const blk=bR.status==='fulfilled'?bR.value:null;
-  if(amz&&amz.price){setPCard('amzPrc','$'+parseFloat(amz.price).toFixed(2),'bl','amzSub','Amazon sell price','amzSrc',amz.confidence==='low'?'estimate — verify':'from Amazon search','amzCard',true);setF('sPrc',amz.price);if(amz.name)setF('pName',amz.name);if(amz.size)document.getElementById('sz').value=amz.size;}
-  else{setPCard('amzPrc','Not found','rd','amzSub','enter manually below','amzSrc','','amzCard',false);}
-  if(blk&&blk.price){setPCard('blkPrc','$'+parseFloat(blk.price).toFixed(2),'gn','blkSub','bulk cost / unit','blkSrc',blk.source?'via '+blk.source:(blk.confidence==='low'?'estimate — verify':''),'blkCard',true);setF('bCost',blk.price);}
-  else{setPCard('blkPrc','Not found','rd','blkSub','scan screenshot instead','blkSrc','','blkCard',false);}
+  if(amz&&amz.price){
+    setPCard('amzPrc','$'+parseFloat(amz.price).toFixed(2),'bl','amzSub','Amazon sell price','amzSrc',amz.confidence==='low'?'estimate — verify':'from Amazon search','amzCard',true);
+    setF('sPrc',amz.price);if(amz.name)setF('pName',amz.name);if(amz.size)document.getElementById('sz').value=amz.size;
+  } else {
+    setPCard('amzPrc','Not found','rd','amzSub','enter manually below','amzSrc','','amzCard',false);
+  }
+  if(blk&&blk.price){
+    setPCard('blkPrc','$'+parseFloat(blk.price).toFixed(2),'gn','blkSub','bulk cost / unit','blkSrc',blk.source?'via '+blk.source:(blk.confidence==='low'?'estimate — verify':''),'blkCard',true);
+    setF('bCost',blk.price);
+  } else {
+    setPCard('blkPrc','Not found','rd','blkSub','scan screenshot instead','blkSrc','','blkCard',false);
+  }
   setTimeout(()=>{calc();updateCmpBar();},100);
 }
+
 function resetCard(pId,sId,srcId,cId){document.getElementById(pId).className='pc-price mu';document.getElementById(pId).textContent='Searching…';document.getElementById(sId).textContent='';document.getElementById(srcId).textContent='';document.getElementById(cId).classList.remove('found');}
 function setPCard(pId,pVal,pCls,sId,sVal,srcId,srcVal,cId,found){document.getElementById(pId).className='pc-price '+pCls;document.getElementById(pId).textContent=pVal;document.getElementById(sId).textContent=sVal;document.getElementById(srcId).textContent=srcVal;if(found)document.getElementById(cId).classList.add('found');}
-
-async function searchAmz(q){const t=await aiCall([{role:'user',content:`Search Amazon.com for "${q}". Find the current buy box or average selling price.\n\nReturn ONLY valid JSON:\n{"name":"exact product name","price":6.99,"size":"small","confidence":"high"}\n\nsize: small(under 1lb), large(1-3lb), oversized(over 3lb)`}],true);return pJSON(t);}
-async function searchBlk(q){const t=await aiCall([{role:'user',content:`Search for wholesale/bulk pricing for "${q}". Check Alibaba, Sam's Club, Costco Business, wholesale distributors. Find price per unit buying 50-100+ units.\n\nReturn ONLY valid JSON:\n{"price":1.50,"source":"Alibaba","minQty":100,"confidence":"high"}`}],true);return pJSON(t);}
 
 function updateCmpBar(){
   const sell=parseFloat(document.getElementById('sPrc').value)||0,cost=parseFloat(document.getElementById('bCost').value)||0;
@@ -670,20 +653,21 @@ function updateCmpBar(){
   const vb=document.getElementById('cbVerd');vb.textContent=margin>=getMinM()?'✓ Buy':ppu<=0?'✗ Skip':'⚠ Risky';vb.style.color=mc;
 }
 
+// Image scan
 async function handleScan(input){
   if(!input.files||!input.files[0])return;
-  const key=getKey();
-  if(!key.startsWith('sk-ant-')){document.getElementById('noKey').style.display='flex';toast('Add API key in Settings first');return;}
+  if(!getServer()){document.getElementById('noServer').style.display='flex';toast('Add server URL in Settings first');return;}
   const file=input.files[0];
-  const full=await toB64(file);const thumb=await resizeImg(full,400);
+  const full=await toB64(file);
+  const thumb=await resizeImg(full,400);
   ST.clipboard.unshift({id:Date.now(),thumb,ts:Date.now(),name:'Bulk scan '+new Date().toLocaleDateString()});
   save();updateClipCnt();
   showAI('load','Reading bulk listing screenshot…');
   try{
     const b64=full.split(',')[1];
-    const t=await aiCall([{role:'user',content:[{type:'image',source:{type:'base64',media_type:file.type||'image/jpeg',data:b64}},{type:'text',text:'Read this bulk supplier listing.\n\nReturn ONLY valid JSON:\n{"name":"product name","bulkPrice":2.50,"sellPrice":null,"source":"supplier","size":"small","confidence":"high"}'}]}],false);
-    const d=pJSON(t);
-    if(d.bulkPrice)setF('bCost',d.bulkPrice);if(d.sellPrice)setF('sPrc',d.sellPrice);
+    const d=await apiCall('scan',null,b64,file.type||'image/jpeg');
+    if(d.bulkPrice)setF('bCost',d.bulkPrice);
+    if(d.sellPrice)setF('sPrc',d.sellPrice);
     if(d.name&&!document.getElementById('pName').value)setF('pName',d.name);
     if(d.size)document.getElementById('sz').value=d.size;
     setTimeout(()=>{calc();updateCmpBar();},100);
@@ -695,6 +679,7 @@ async function handleScan(input){
 async function toB64(file){return new Promise((r,j)=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.onerror=j;fr.readAsDataURL(file);});}
 async function resizeImg(dataUrl,maxW){return new Promise(r=>{const img=new Image();img.onload=()=>{const ratio=Math.min(maxW/img.width,maxW/img.height,1);const c=document.createElement('canvas');c.width=img.width*ratio;c.height=img.height*ratio;c.getContext('2d').drawImage(img,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',0.75));};img.src=dataUrl;});}
 
+// Calc
 function calc(){
   const cost=parseFloat(document.getElementById('bCost').value)||0,units=parseInt(document.getElementById('units').value)||0;
   const sell=parseFloat(document.getElementById('sPrc').value)||0,sz=document.getElementById('sz').value;
@@ -719,6 +704,7 @@ function sv(id,val,cls){const el=document.getElementById(id);el.textContent=val;
 function setF(id,val){const el=document.getElementById(id);if(!el||!val)return;el.value=val;el.classList.remove('af');void el.offsetWidth;el.classList.add('af');setTimeout(()=>el.classList.remove('af'),1200);}
 function clearForm(){['pName','bCost','units','sPrc'].forEach(id=>document.getElementById(id).value='');document.getElementById('ship').value='0.50';document.getElementById('resCard').style.display='none';document.getElementById('cmpSection').style.display='none';document.getElementById('aiBox').style.display='none';clearSrch();}
 
+// Modal
 function openModal(){
   if(ST.paused)return;
   document.getElementById('mName').value=document.getElementById('pName').value;
@@ -753,20 +739,37 @@ function doAdd(){
 function checkGuards(){const b=getBudget(),pct=b>0?(ST.budgetUsed/b)*100:0;if(pct>=100){ST.paused=true;document.getElementById('sd').classList.add('on');}}
 function resume(){ST.paused=false;document.getElementById('sd').classList.remove('on');}
 
+// Tracker
 function renderTracker(){
   const el=document.getElementById('trackerContent');
   if(!ST.products.length){el.innerHTML='<div class="empty"><div class="empty-i">📦</div><p>No products tracked yet.<br>Use the Scout tab to research and add deals.</p></div>';return;}
   const filtered=ST.filterCat==='All'?ST.products:ST.products.filter(p=>p.cat===ST.filterCat);
   const tp=ST.products.reduce((s,p)=>s+p.profitPU*p.units,0),ti=ST.products.reduce((s,p)=>s+p.totalInvest,0),am=ST.products.reduce((s,p)=>s+p.margin,0)/ST.products.length;
   const allCats=['All',...new Set(ST.products.map(p=>p.cat))];
-  el.innerHTML=`<div class="sg"><div class="sc"><div class="sv ${tp>=0?'gn':'rd'}">$${tp.toFixed(2)}</div><div class="sl">Est. total profit</div></div><div class="sc"><div class="sv">$${ti.toFixed(2)}</div><div class="sl">Total invested</div></div><div class="sc"><div class="sv">${ST.products.length}</div><div class="sl">Products</div></div><div class="sc"><div class="sv ${am>=25?'gn':am>=10?'am':'rd'}">${am.toFixed(1)}%</div><div class="sl">Avg margin</div></div></div>
-    <div class="cat-row">${allCats.map(c=>`<div class="chip${ST.filterCat===c?' on':''}" onclick="setCat('${c}')">${c}</div>`).join('')}</div>
-    ${filtered.length?filtered.map(p=>`<div class="pc"><div class="pc-top" onclick="toggleExp(${p.id})"><div class="pc-info"><div class="pc-name">${p.name}</div><div class="pc-meta">${p.units} units · <span class="bdg mu" style="padding:1px 6px;font-size:10px">${p.cat}</span> · ${p.date}</div></div><div class="pc-right"><div class="pc-profit ${p.profitPU*p.units>=0?'gn':'rd'}">$${(p.profitPU*p.units).toFixed(2)}</div><span class="bdg ${p.margin>=25?'gn':p.margin>=10?'am':'rd'}">${p.margin.toFixed(1)}%</span></div></div><div class="pc-exp" id="exp-${p.id}">${p.notes?`<div class="pc-notes">${p.notes}</div>`:''}<div style="font-size:12px;color:var(--mu);padding:8px 0">Bulk: $${p.cost.toFixed(2)}/unit · Sell: $${p.sell.toFixed(2)} · Invested: $${p.totalInvest.toFixed(2)}</div>${p.imgs&&p.imgs.length?`<div class="pc-imgs">${p.imgs.map(img=>`<img class="pc-thumb" src="${img}">`).join('')}</div>`:''}</div></div>`).join(''):'<div class="empty"><div class="empty-i">🔍</div><p>No products in this category.</p></div>'}`;
+  el.innerHTML=`<div class="sg">
+    <div class="sc"><div class="sv ${tp>=0?'gn':'rd'}">$${tp.toFixed(2)}</div><div class="sl">Est. total profit</div></div>
+    <div class="sc"><div class="sv">$${ti.toFixed(2)}</div><div class="sl">Total invested</div></div>
+    <div class="sc"><div class="sv">${ST.products.length}</div><div class="sl">Products</div></div>
+    <div class="sc"><div class="sv ${am>=25?'gn':am>=10?'am':'rd'}">${am.toFixed(1)}%</div><div class="sl">Avg margin</div></div>
+  </div>
+  <div class="cat-row">${allCats.map(c=>`<div class="chip${ST.filterCat===c?' on':''}" onclick="setCat('${c}')">${c}</div>`).join('')}</div>
+  ${filtered.length?filtered.map(p=>`<div class="pc">
+    <div class="pc-top" onclick="toggleExp(${p.id})">
+      <div class="pc-info"><div class="pc-name">${p.name}</div><div class="pc-meta">${p.units} units · <span class="bdg mu" style="padding:1px 6px;font-size:10px">${p.cat}</span> · ${p.date}</div></div>
+      <div class="pc-right"><div class="pc-profit ${p.profitPU*p.units>=0?'gn':'rd'}">$${(p.profitPU*p.units).toFixed(2)}</div><span class="bdg ${p.margin>=25?'gn':p.margin>=10?'am':'rd'}">${p.margin.toFixed(1)}%</span></div>
+    </div>
+    <div class="pc-exp" id="exp-${p.id}">
+      ${p.notes?`<div class="pc-notes">${p.notes}</div>`:''}
+      <div style="font-size:12px;color:var(--mu);padding:8px 0">Bulk: $${p.cost.toFixed(2)}/unit · Sell: $${p.sell.toFixed(2)} · Invested: $${p.totalInvest.toFixed(2)}</div>
+      ${p.imgs&&p.imgs.length?`<div class="pc-imgs">${p.imgs.map(img=>`<img class="pc-thumb" src="${img}">`).join('')}</div>`:''}
+    </div>
+  </div>`).join(''):'<div class="empty"><div class="empty-i">🔍</div><p>No products in this category.</p></div>'}`;
 }
 function setCat(c){ST.filterCat=c;renderTracker();}
 function toggleExp(id){const el=document.getElementById('exp-'+id);if(el)el.classList.toggle('open');}
 
-function expireClip(){const ret=parseInt(localStorage.getItem('fba_ret')||'24');if(ret===0)return;const cut=Date.now()-ret*3600000;ST.clipboard=ST.clipboard.filter(c=>c.ts>cut);save();}
+// Clipboard
+function expireClip(){const ret=parseInt(localStorage.getItem('v_ret')||'24');if(ret===0)return;const cut=Date.now()-ret*3600000;ST.clipboard=ST.clipboard.filter(c=>c.ts>cut);save();}
 async function addToClip(input){
   if(!input.files||!input.files[0])return;
   const file=input.files[0];const full=await toB64(file);const thumb=await resizeImg(full,400);
@@ -774,25 +777,32 @@ async function addToClip(input){
   save();renderClip();updateClipCnt();toast('Saved to clipboard!');input.value='';
 }
 function renderClip(){
-  const ret=parseInt(localStorage.getItem('fba_ret')||'24');
+  const ret=parseInt(localStorage.getItem('v_ret')||'24');
   document.getElementById('clipHdr').innerHTML=`<div style="font-size:12px;color:var(--mu)">${ST.clipboard.length} image${ST.clipboard.length!==1?'s':''} · auto-delete after ${ret===0?'never':ret+'h'}</div>`;
   const el=document.getElementById('clipContent');
   if(!ST.clipboard.length){el.innerHTML='<div class="empty"><div class="empty-i">📷</div><p>No saved images yet.<br>Scan a bulk listing or tap "Save image" above.</p></div>';return;}
-  el.innerHTML='<div class="clip-grid">'+ST.clipboard.map(c=>`<div class="ci-card"><img class="ci-img" src="${c.thumb}"><button class="ci-del" onclick="delClip(${c.id})">✕</button><div class="ci-info"><div class="ci-name">${c.name}</div><div class="ci-age">${getAge(c.ts)}</div></div><button class="ci-use" onclick="useClip(${c.id})">Use in Scout →</button></div>`).join('')+'</div>';
+  el.innerHTML='<div class="clip-grid">'+ST.clipboard.map(c=>`<div class="ci-card">
+    <img class="ci-img" src="${c.thumb}">
+    <button class="ci-del" onclick="delClip(${c.id})">✕</button>
+    <div class="ci-info"><div class="ci-name">${c.name}</div><div class="ci-age">${getAge(c.ts)}</div></div>
+    <button class="ci-use" onclick="useClip(${c.id})">Use in Scout →</button>
+  </div>`).join('')+'</div>';
 }
 function getAge(ts){const h=Math.floor((Date.now()-ts)/3600000);return h<1?'Just now':h<24?h+'h ago':Math.floor(h/24)+'d ago';}
 function delClip(id){ST.clipboard=ST.clipboard.filter(c=>c.id!==id);save();renderClip();updateClipCnt();}
 function clearClip(){if(!confirm('Clear all clipboard images?'))return;ST.clipboard=[];save();renderClip();updateClipCnt();toast('Clipboard cleared');}
 function updateClipCnt(){const el=document.getElementById('clipCnt');if(el)el.textContent=ST.clipboard.length+' image'+(ST.clipboard.length!==1?'s':'');}
+
 async function useClip(id){
   const item=ST.clipboard.find(c=>c.id===id);if(!item)return;
-  showPage('scout');const key=getKey();if(!key.startsWith('sk-ant-')){document.getElementById('noKey').style.display='flex';return;}
+  showPage('scout');
+  if(!getServer()){document.getElementById('noServer').style.display='flex';return;}
   showAI('load','Reading clipboard image…');
   try{
     const b64=item.thumb.split(',')[1];
-    const t=await aiCall([{role:'user',content:[{type:'image',source:{type:'base64',media_type:'image/jpeg',data:b64}},{type:'text',text:'Read this bulk supplier listing.\n\nReturn ONLY valid JSON:\n{"name":"product name","bulkPrice":2.50,"sellPrice":null,"source":"supplier","size":"small","confidence":"high"}'}]}],false);
-    const d=pJSON(t);
-    if(d.bulkPrice)setF('bCost',d.bulkPrice);if(d.sellPrice)setF('sPrc',d.sellPrice);
+    const d=await apiCall('scan',null,b64,'image/jpeg');
+    if(d.bulkPrice)setF('bCost',d.bulkPrice);
+    if(d.sellPrice)setF('sPrc',d.sellPrice);
     if(d.name&&!document.getElementById('pName').value)setF('pName',d.name);
     if(d.size)document.getElementById('sz').value=d.size;
     setTimeout(()=>{calc();updateCmpBar();},100);
@@ -807,12 +817,6 @@ function showAI(type,msg){
   el.innerHTML='<div class="ais '+type+'">'+spin+'<span>'+(ic[type]||'')+msg+'</span></div>';
   if(type!=='load')setTimeout(()=>el.style.display='none',5000);
 }
-function updateKeySt(){
-  const k=getKey(),el=document.getElementById('apiSt'),w=document.getElementById('noKey');
-  if(k.startsWith('sk-ant-')&&k.length>20){el.innerHTML='<span class="dot gn"></span>API key saved — AI enabled';if(w)w.style.display='none';}
-  else if(k.length>0){el.innerHTML='<span class="dot am"></span>Key looks incomplete';}
-  else{el.innerHTML='<span class="dot rd"></span>No key — AI disabled';if(w)w.style.display='flex';}
-}
 
 function exportCSV(){
   const h='Product,Category,Units,Bulk Cost,Sell Price,Total Invested,Profit/Unit,Total Profit,Margin %,Notes,Date';
@@ -824,29 +828,11 @@ function exportCSV(){
 function confirmReset(){if(!confirm('Reset all products, spending, and clipboard?'))return;ST.products=[];ST.budgetUsed=0;ST.clipboard=[];save();updateBudget();renderTracker();toast('All data reset');}
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2500);}
 
-
-function downloadApp(){
-  const html = document.documentElement.outerHTML;
-  const blob = new Blob([html], {type: 'text/html'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'vendiq.html';
-  a.click();
-  URL.revokeObjectURL(a.href);
-  toast('Vendiq downloaded!');
+load();updateBudget();updateServerStatus();
+if('serviceWorker' in navigator){
+  const sw=`const C='vendiq-v6';self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(['.']))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));`;
+  navigator.serviceWorker.register(URL.createObjectURL(new Blob([sw],{type:'application/javascript'})));
 }
-async function shareApp(){
-  const html = document.documentElement.outerHTML;
-  const blob = new Blob([html], {type: 'text/html'});
-  const file = new File([blob], 'vendiq.html', {type: 'text/html'});
-  if(navigator.canShare && navigator.canShare({files:[file]})){
-    try{
-      await navigator.share({files:[file], title:'Vendiq', text:'Amazon FBA deal finder — install this file as an app on your phone'});
-    } catch(e){ if(e.name!=='AbortError') downloadApp(); }
-  } else {
-    downloadApp();
-  }
-}
-
-load();updateBudget();updateKeySt();
-if('serviceWorker' in navigator){const sw=`const C='vendiq-v1';self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(['.']))));s
+</script>
+</body>
+</html>
