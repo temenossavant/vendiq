@@ -9,60 +9,50 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#080810;
-  --s1:#0f0f1a;
-  --s2:#16162a;
-  --gn:#3ddc84;
-  --gn2:#2ab870;
-  --bl:#5b8def;
-  --tx:#f0f0fa;
-  --mu:#8888aa;
-  --hi:#3a3a60;
+  --bg:#080810;--s1:#0f0f1a;--s2:#16162a;
+  --gn:#3ddc84;--gn2:#2ab870;--bl:#5b8def;
+  --tx:#f0f0fa;--mu:#8888aa;--hi:#3a3a60;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overflow-x:hidden;line-height:1.6}
-
-/* ── NOISE TEXTURE ── */
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,16,.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:-.3px;color:var(--tx)}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:-.3px;color:var(--tx);cursor:pointer}
 .nav-logo span{color:var(--gn)}
 .nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{color:var(--mu);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a{color:var(--mu);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;cursor:pointer}
 .nav-links a:hover{color:var(--tx)}
-.nav-cta{background:var(--gn);color:#000;padding:9px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:background .2s,transform .1s}
+.nav-cta{background:var(--gn);color:#000;padding:9px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:background .2s,transform .1s;cursor:pointer}
 .nav-cta:hover{background:var(--gn2);transform:translateY(-1px)}
 
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+/* PAGES */
+.pg{display:none;min-height:100vh}
+.pg.active{display:block}
 
-/* animated orbs */
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.18;animation:float 8s ease-in-out infinite}
 .orb1{width:500px;height:500px;background:var(--gn);top:-100px;left:-150px;animation-delay:0s}
 .orb2{width:400px;height:400px;background:var(--bl);bottom:-80px;right:-100px;animation-delay:-4s}
 .orb3{width:300px;height:300px;background:var(--gn);bottom:100px;left:50%;animation-delay:-2s}
 @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
-
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(61,220,132,.1);border:1px solid rgba(61,220,132,.25);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--gn);text-transform:uppercase;letter-spacing:.1em;margin-bottom:28px;position:relative;z-index:1}
 .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gn);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-
 .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,8vw,88px);line-height:1.05;letter-spacing:-.02em;margin-bottom:24px;position:relative;z-index:1}
 .hero h1 em{font-style:italic;color:var(--gn)}
 .hero-sub{font-size:clamp(16px,2.5vw,20px);color:var(--mu);max-width:560px;margin:0 auto 44px;line-height:1.7;font-weight:300;position:relative;z-index:1}
-
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
 .btn-primary{background:var(--gn);color:#000;padding:15px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer;font-family:inherit}
 .btn-primary:hover{background:var(--gn2);transform:translateY(-2px);box-shadow:0 16px 40px rgba(61,220,132,.25)}
 .btn-secondary{background:rgba(255,255,255,.05);color:var(--tx);padding:15px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1);transition:all .2s;cursor:pointer;font-family:inherit}
 .btn-secondary:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
-
 .hero-note{font-size:13px;color:var(--hi);margin-top:18px;position:relative;z-index:1}
 
-/* ── PHONE MOCKUP ── */
+/* PHONE MOCKUP */
 .mockup-wrap{position:relative;z-index:1;margin-top:70px;display:flex;justify-content:center}
 .phone{width:260px;background:#0f0f1a;border-radius:36px;border:1.5px solid rgba(255,255,255,.12);padding:12px;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04);position:relative;overflow:hidden}
 .phone::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#0a0a0d;border-radius:0 0 14px 14px;z-index:10}
@@ -88,12 +78,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .phone-nav-icon{font-size:14px}
 .phone-glow{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:200px;height:200px;background:var(--gn);border-radius:50%;filter:blur(60px);opacity:.12}
 
-/* ── FEATURES ── */
+/* FEATURES */
 .features{padding:100px 24px;position:relative;z-index:1}
 .section-label{text-align:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gn);margin-bottom:14px}
 .section-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,52px);text-align:center;line-height:1.15;margin-bottom:56px;letter-spacing:-.02em}
 .section-title em{font-style:italic;color:var(--mu)}
-
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:1000px;margin:0 auto}
 .feat{background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:28px;transition:border-color .3s,transform .3s}
 .feat:hover{border-color:rgba(61,220,132,.25);transform:translateY(-4px)}
@@ -102,11 +91,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .feat p{font-size:14px;color:var(--mu);line-height:1.7}
 .feat-tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:600;color:var(--gn);background:rgba(61,220,132,.1);padding:3px 10px;border-radius:20px}
 
-/* ── HOW IT WORKS ── */
+/* HOW IT WORKS */
 .how{padding:80px 24px 100px;position:relative;z-index:1}
 .how-inner{max-width:660px;margin:0 auto}
-.how-step{display:flex;gap:20px;margin-bottom:36px;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
-.how-step.visible{opacity:1;transform:translateY(0)}
+.how-step{display:flex;gap:20px;margin-bottom:36px}
 .how-num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;margin-top:3px}
 .how-num.n1{background:rgba(91,141,239,.15);color:var(--bl);border:1px solid rgba(91,141,239,.3)}
 .how-num.n2{background:rgba(61,220,132,.12);color:var(--gn);border:1px solid rgba(61,220,132,.25)}
@@ -116,14 +104,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .how-content h3{font-size:17px;font-weight:700;margin-bottom:5px;letter-spacing:-.2px}
 .how-content p{font-size:14px;color:var(--mu);line-height:1.7}
 
-/* ── STATS ── */
+/* STATS */
 .stats{padding:60px 24px;position:relative;z-index:1}
 .stats-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
 .stat{background:var(--s1);padding:36px 28px;text-align:center}
 .stat-val{font-family:'DM Serif Display',serif;font-size:44px;color:var(--gn);line-height:1;margin-bottom:8px}
 .stat-lbl{font-size:13px;color:var(--mu);font-weight:500}
 
-/* ── DOWNLOAD ── */
+/* DOWNLOAD */
 .download{padding:100px 24px;position:relative;z-index:1;text-align:center}
 .download-card{max-width:680px;margin:0 auto;background:linear-gradient(135deg,rgba(61,220,132,.08) 0%,rgba(91,141,239,.08) 100%);border:1px solid rgba(61,220,132,.2);border-radius:24px;padding:56px 40px}
 .download-card h2{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,46px);line-height:1.15;margin-bottom:14px;letter-spacing:-.02em}
@@ -134,16 +122,65 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 .download-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .download-note{font-size:12px;color:var(--hi);margin-top:16px}
 
-/* ── FOOTER ── */
-footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;position:relative;z-index:1;gap:20px;flex-wrap:wrap}
-.footer-logo{font-family:'DM Serif Display',serif;font-size:20px}
+/* CONTACT PAGE */
+.contact-pg{min-height:100vh;padding:120px 24px 80px;position:relative;overflow:hidden}
+.contact-orb1{position:absolute;width:400px;height:400px;background:var(--gn);border-radius:50%;filter:blur(100px);opacity:.08;top:-100px;right:-100px;pointer-events:none}
+.contact-orb2{position:absolute;width:300px;height:300px;background:var(--bl);border-radius:50%;filter:blur(100px);opacity:.08;bottom:0;left:-80px;pointer-events:none}
+.contact-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.contact-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(61,220,132,.1);border:1px solid rgba(61,220,132,.25);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--gn);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px}
+.contact-inner h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,6vw,60px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+.contact-inner h1 em{font-style:italic;color:var(--gn)}
+.contact-intro{font-size:16px;color:var(--mu);line-height:1.8;max-width:600px;margin-bottom:56px}
+.contact-intro strong{color:var(--tx)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.contact-card{background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:32px}
+.contact-card.full{grid-column:1/-1}
+.contact-card-icon{font-size:30px;margin-bottom:16px}
+.contact-card h2{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:10px;letter-spacing:-.2px}
+.contact-card p{font-size:14px;color:var(--mu);line-height:1.7;margin-bottom:16px}
+
+/* Donate options */
+.donate-opts{display:flex;flex-direction:column;gap:10px}
+.donate-opt{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:border-color .2s,background .2s;text-decoration:none}
+.donate-opt:hover{border-color:rgba(61,220,132,.3);background:rgba(61,220,132,.05)}
+.donate-opt-icon{font-size:22px;flex-shrink:0}
+.donate-opt-info{flex:1}
+.donate-opt-name{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.donate-opt-sub{font-size:12px;color:var(--mu)}
+.donate-opt-arr{color:var(--mu);font-size:14px}
+
+/* Email display */
+.email-display{background:rgba(61,220,132,.06);border:1px solid rgba(61,220,132,.2);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.email-addr{font-size:16px;font-weight:600;color:var(--gn);font-family:monospace;letter-spacing:.02em}
+.copy-btn{background:rgba(61,220,132,.15);border:1px solid rgba(61,220,132,.3);color:var(--gn);padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s;font-family:inherit;white-space:nowrap}
+.copy-btn:hover{background:rgba(61,220,132,.25)}
+.contact-note{font-size:13px;color:var(--mu);line-height:1.6}
+
+/* Roadmap */
+.roadmap{display:flex;flex-direction:column;gap:10px}
+.roadmap-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.roadmap-item:last-child{border-bottom:none}
+.roadmap-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.roadmap-dot.coming{background:var(--gn)}
+.roadmap-dot.planned{background:var(--bl)}
+.roadmap-dot.idea{background:var(--mu)}
+.roadmap-text strong{font-size:14px;font-weight:600;display:block;margin-bottom:2px}
+.roadmap-text span{font-size:12px;color:var(--mu)}
+.roadmap-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.roadmap-badge.soon{background:rgba(61,220,132,.15);color:var(--gn)}
+.roadmap-badge.planned{background:rgba(91,141,239,.15);color:var(--bl)}
+
+/* FOOTER */
+footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;position:relative;z-index:1;gap:20px}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:20px;cursor:pointer}
 .footer-logo span{color:var(--gn)}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap}
-.footer-links a{color:var(--mu);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-links a{color:var(--mu);text-decoration:none;font-size:13px;transition:color .2s;cursor:pointer}
 .footer-links a:hover{color:var(--tx)}
 .footer-copy{font-size:12px;color:var(--hi)}
 
-/* ── SCROLL ANIMATIONS ── */
+/* FADE ANIMATIONS */
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 
@@ -154,240 +191,273 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex
   .download-card{padding:36px 24px}
   footer{padding:32px 20px;flex-direction:column;align-items:flex-start}
   .phone{width:220px}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-card.full{grid-column:1}
+  .contact-pg{padding:100px 20px 60px}
+  .email-display{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Vend<span>iq</span></div>
+  <div class="nav-logo" onclick="showPage('home')">Vend<span>iq</span></div>
   <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how">How it works</a>
-    <a href="#download">Get the app</a>
-    <a href="mailto:vendiq@tuta.io">Support</a>
-    <a href="#download" class="nav-cta">Download free</a>
+    <a onclick="showPage('home');scrollTo('#features')">Features</a>
+    <a onclick="showPage('home');scrollTo('#how')">How it works</a>
+    <a onclick="showPage('home');scrollTo('#download')">Download</a>
+    <a onclick="showPage('contact')">Contact us</a>
+    <a onclick="showPage('home');scrollTo('#download')" class="nav-cta">Download free</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+<!-- ══════════════ HOME PAGE ══════════════ -->
+<div id="pg-home" class="pg active">
 
-  <div class="hero-eyebrow">
-    <span></span>AI-Powered FBA Research
-  </div>
-
-  <h1>Find deals.<br><em>Track profits.</em><br>Build your business.</h1>
-
-  <p class="hero-sub">Vendiq searches Amazon and bulk suppliers simultaneously, calculates your profit in real time, and keeps your entire FBA operation organized — all from your phone.</p>
-
-  <div class="hero-btns">
-    <button class="btn-primary" onclick="downloadApp()">⬇ Download free app</button>
-    <a href="#how" class="btn-secondary">See how it works →</a>
-  </div>
-  <div class="hero-note">One file. No App Store. No sign-up. Works on iPhone &amp; Android.</div>
-
-  <div class="mockup-wrap">
-    <div class="phone">
-      <div class="phone-glow"></div>
-      <div class="phone-screen">
-        <div class="phone-hdr">
-          <div class="phone-title">Vendiq</div>
-          <div class="phone-sub">Find &amp; track profitable deals</div>
-        </div>
-        <div class="phone-search">🔍 <span>dish soap 32oz bulk…</span></div>
-        <div class="phone-cards">
-          <div class="phone-card amz">
-            <div class="phone-card-lbl">🛒 Amazon</div>
-            <div class="phone-card-val">$8.49</div>
+  <section class="hero">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="hero-eyebrow"><span></span>AI-Powered FBA Research</div>
+    <h1>Find deals.<br><em>Track profits.</em><br>Build your business.</h1>
+    <p class="hero-sub">Vendiq searches Amazon and bulk suppliers simultaneously, calculates your profit in real time, and keeps your entire FBA operation organized — all from your phone.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="downloadApp()">⬇ Download free app</button>
+      <button class="btn-secondary" onclick="scrollTo('#how')">See how it works →</button>
+    </div>
+    <div class="hero-note">One file. No App Store. No sign-up. Works on iPhone &amp; Android.</div>
+    <div class="mockup-wrap">
+      <div class="phone">
+        <div class="phone-glow"></div>
+        <div class="phone-screen">
+          <div class="phone-hdr">
+            <div class="phone-title">Vendiq</div>
+            <div class="phone-sub">Find &amp; track profitable deals</div>
           </div>
-          <div class="phone-card blk">
-            <div class="phone-card-lbl">📦 Bulk</div>
-            <div class="phone-card-val">$1.90</div>
+          <div class="phone-search">🔍 <span>dish soap 32oz bulk…</span></div>
+          <div class="phone-cards">
+            <div class="phone-card amz"><div class="phone-card-lbl">🛒 Amazon</div><div class="phone-card-val">$8.49</div></div>
+            <div class="phone-card blk"><div class="phone-card-lbl">📦 Bulk</div><div class="phone-card-val">$1.90</div></div>
+          </div>
+          <div class="phone-verdict">✓ Buy it! — 41% margin · $330 profit</div>
+          <div class="phone-nav">
+            <div class="phone-nav-item act"><div class="phone-nav-icon">🔍</div>Scout</div>
+            <div class="phone-nav-item"><div class="phone-nav-icon">📦</div>Tracker</div>
+            <div class="phone-nav-item"><div class="phone-nav-icon">📋</div>Clips</div>
+            <div class="phone-nav-item"><div class="phone-nav-icon">❓</div>Help</div>
+            <div class="phone-nav-item"><div class="phone-nav-icon">⚙️</div>Settings</div>
           </div>
         </div>
-        <div class="phone-verdict">✓ Buy it! — 41% margin · $330 profit</div>
-        <div class="phone-nav">
-          <div class="phone-nav-item act"><div class="phone-nav-icon">🔍</div>Scout</div>
-          <div class="phone-nav-item"><div class="phone-nav-icon">📦</div>Tracker</div>
-          <div class="phone-nav-item"><div class="phone-nav-icon">📋</div>Clips</div>
-          <div class="phone-nav-item"><div class="phone-nav-icon">❓</div>Help</div>
-          <div class="phone-nav-item"><div class="phone-nav-icon">⚙️</div>Settings</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat"><div class="stat-val">2</div><div class="stat-lbl">Price searches at once</div></div>
+      <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">App Store fees to install</div></div>
+      <div class="stat"><div class="stat-val">100%</div><div class="stat-lbl">Data stays on your device</div></div>
+      <div class="stat"><div class="stat-val">Free</div><div class="stat-lbl">To download &amp; use</div></div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="section-label">What Vendiq does</div>
+    <h2 class="section-title fade-up">Everything you need.<br><em>Nothing you don't.</em></h2>
+    <div class="feat-grid">
+      <div class="feat fade-up"><span class="feat-icon">🔍</span><h3>Dual AI search</h3><p>Type any product and Vendiq searches Amazon for the sell price and wholesale suppliers for bulk cost — simultaneously.</p><span class="feat-tag">Powered by Claude AI</span></div>
+      <div class="feat fade-up" style="transition-delay:.1s"><span class="feat-icon">📷</span><h3>Screenshot scanner</h3><p>Found a deal on a supplier site? Screenshot it. Vendiq reads the price, product name, and quantity and autofills everything instantly.</p><span class="feat-tag">AI vision</span></div>
+      <div class="feat fade-up" style="transition-delay:.2s"><span class="feat-icon">📊</span><h3>Instant profit calc</h3><p>See your real profit after Amazon FBA fees, referral fees, and shipping — before you spend a dollar. No guesswork, no spreadsheets.</p><span class="feat-tag">Real-time</span></div>
+      <div class="feat fade-up"><span class="feat-icon">📦</span><h3>Deal tracker</h3><p>Log every product with notes, categories, and images. Filter by category. Full deal history with dates, costs, and profit estimates.</p><span class="feat-tag">With CSV export</span></div>
+      <div class="feat fade-up" style="transition-delay:.1s"><span class="feat-icon">📋</span><h3>Image clipboard</h3><p>Save bulk listing screenshots to a clipboard tab. Auto-expires after 24 hours. Attach saved images directly to your tracked products.</p><span class="feat-tag">24h auto-expire</span></div>
+      <div class="feat fade-up" style="transition-delay:.2s"><span class="feat-icon">🛡️</span><h3>Budget safeguards</h3><p>Set your budget and Vendiq warns you at 75%, alerts at 90%, and fully pauses the system at 100% — so you never overspend.</p><span class="feat-tag">3-level protection</span></div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="section-label" style="text-align:center">The workflow</div>
+    <h2 class="section-title fade-up">From search to<br><em>shipped inventory</em></h2>
+    <div class="how-inner">
+      <div class="how-step"><div class="how-num n1">1</div><div class="how-content"><h3>Search any product</h3><p>Type a product name into the Scout tab. Vendiq's AI searches Amazon and wholesale suppliers simultaneously and autofills both prices in seconds.</p></div></div>
+      <div class="how-step"><div class="how-num n2">2</div><div class="how-content"><h3>Scan a bulk deal</h3><p>Browsing Alibaba or Sam's Club? Screenshot the listing and tap "Scan." Vendiq reads the bulk price directly from the image — no typing needed.</p></div></div>
+      <div class="how-step"><div class="how-num n3">3</div><div class="how-content"><h3>Review your profit breakdown</h3><p>See exactly what you'll earn per unit and in total, after every Amazon fee. Get a clear Buy / Skip / Borderline verdict against your margin target.</p></div></div>
+      <div class="how-step"><div class="how-num n4">4</div><div class="how-content"><h3>Add to tracker with notes</h3><p>Log the deal with a category, supplier notes, and attached screenshots. Tap any product in the Tracker to expand its full deal history.</p></div></div>
+      <div class="how-step"><div class="how-num n5">5</div><div class="how-content"><h3>Monitor &amp; export</h3><p>Track total profit, invested, and avg margin across all your deals. Filter by category. Export to CSV anytime for use in a spreadsheet.</p></div></div>
+    </div>
+  </section>
+
+  <section class="download" id="download">
+    <div class="download-card fade-up">
+      <h2>Get Vendiq<br>on your phone</h2>
+      <p>Download the app file, open it in your phone's browser, and add it to your home screen — no App Store needed.</p>
+      <div class="dl-steps">
+        <div class="dl-step">📥 <span>1.</span> Download below</div>
+        <div class="dl-step">📱 <span>2.</span> Open in Safari or Chrome</div>
+        <div class="dl-step">➕ <span>3.</span> Add to Home Screen</div>
+        <div class="dl-step">🚀 <span>4.</span> Launch like a real app</div>
+      </div>
+      <div class="download-btns">
+        <button class="btn-primary" onclick="downloadApp()">⬇ Download Vendiq — free</button>
+        <button class="btn-secondary" onclick="showPage('contact')">✉ Contact us</button>
+      </div>
+      <div class="download-note">Requires a free Anthropic API key for AI features — get one at console.anthropic.com</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo" onclick="showPage('home')">Vend<span>iq</span></div>
+    <div class="footer-links">
+      <a onclick="scrollTo('#features')">Features</a>
+      <a onclick="scrollTo('#how')">How it works</a>
+      <a onclick="scrollTo('#download')">Download</a>
+      <a onclick="showPage('contact')">Contact us</a>
+    </div>
+    <div class="footer-copy">© 2026 Vendiq. Free to use.</div>
+  </footer>
+</div>
+
+<!-- ══════════════ CONTACT PAGE ══════════════ -->
+<div id="pg-contact" class="pg">
+  <div class="contact-pg">
+    <div class="contact-orb1"></div>
+    <div class="contact-orb2"></div>
+    <div class="contact-inner">
+
+      <div class="contact-eyebrow">Contact &amp; Support</div>
+      <h1>Built with <em>passion.</em><br>Supported by you.</h1>
+      <p class="contact-intro">
+        Vendiq was built entirely in my <strong>free time</strong> — a solo project born out of a real need to make Amazon FBA research faster and smarter. It's free to use and always will be. If it's helped you find a good deal or saved you time, any support means the world and goes directly toward keeping the app alive and improving it.<br><br>
+        There's a lot more coming — this is just the beginning.
+      </p>
+
+      <div class="contact-grid">
+
+        <!-- Donate -->
+        <div class="contact-card">
+          <div class="contact-card-icon">☕</div>
+          <h2>Support Vendiq</h2>
+          <p>Vendiq is free and will stay that way. If it's been useful to you, a small contribution helps cover development time, API costs, and future improvements. Every bit counts.</p>
+          <div class="donate-opts">
+            <a class="donate-opt" href="https://ko-fi.com/vendiq" target="_blank" rel="noopener">
+              <div class="donate-opt-icon">☕</div>
+              <div class="donate-opt-info"><div class="donate-opt-name">Ko-fi</div><div class="donate-opt-sub">ko-fi.com/vendiq</div></div>
+              <div class="donate-opt-arr">→</div>
+            </a>
+            <a class="donate-opt" href="https://paypal.me/nexialist" target="_blank" rel="noopener">
+              <div class="donate-opt-icon">💙</div>
+              <div class="donate-opt-info"><div class="donate-opt-name">PayPal</div><div class="donate-opt-sub">@nexialist</div></div>
+              <div class="donate-opt-arr">→</div>
+            </a>
+            <a class="donate-opt" href="https://venmo.com/christopher-Brinkman-7" target="_blank" rel="noopener">
+              <div class="donate-opt-icon">💜</div>
+              <div class="donate-opt-info"><div class="donate-opt-name">Venmo</div><div class="donate-opt-sub">@christopher-Brinkman-7</div></div>
+              <div class="donate-opt-arr">→</div>
+            </a>
+          </div>
         </div>
+
+        <!-- Contact -->
+        <div class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <h2>Get in touch</h2>
+          <p>Have a question, found a bug, or want to suggest a feature? Reach out directly — I read every email and genuinely appreciate the feedback.</p>
+          <div class="email-display">
+            <div class="email-addr"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a8decdc6ccc1d9e8dcdddcc986c1c7">[email&#160;protected]</a></div>
+            <button class="copy-btn" onclick="copyEmail()">Copy</button>
+          </div>
+          <p class="contact-note">Response time is typically within 48 hours. For the fastest help, include your device type and a description of the issue.</p>
+        </div>
+
+        <!-- What's coming -->
+        <div class="contact-card full">
+          <div class="contact-card-icon">🗺️</div>
+          <h2>What's coming next</h2>
+          <p style="margin-bottom:20px">Vendiq is actively being developed. Here's a look at what's in the pipeline — your support helps make these happen faster.</p>
+          <div class="roadmap">
+            <div class="roadmap-item">
+              <div class="roadmap-dot coming"></div>
+              <div class="roadmap-text"><strong>Supplier price history tracking <span class="roadmap-badge soon">Coming soon</span></strong><span>See how bulk prices have changed over time for a product</span></div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot coming"></div>
+              <div class="roadmap-text"><strong>Auto-reorder alerts <span class="roadmap-badge soon">Coming soon</span></strong><span>Get reminded when it's time to restock a product based on your sales pace</span></div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot planned"></div>
+              <div class="roadmap-text"><strong>Competitor price monitoring <span class="roadmap-badge planned">Planned</span></strong><span>Track when competitors change their Amazon prices on products you carry</span></div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot planned"></div>
+              <div class="roadmap-text"><strong>Multi-platform selling <span class="roadmap-badge planned">Planned</span></strong><span>Support for eBay, Walmart Marketplace, and Etsy alongside Amazon FBA</span></div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-dot idea"></div>
+              <div class="roadmap-text"><strong>Official App Store release</strong><span>A fully native app on Google Play and the Apple App Store</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-</section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-inner">
-    <div class="stat"><div class="stat-val">2</div><div class="stat-lbl">Price searches at once</div></div>
-    <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">App Store fees to install</div></div>
-    <div class="stat"><div class="stat-val">100%</div><div class="stat-lbl">Data stays on your device</div></div>
-    <div class="stat"><div class="stat-val">Free</div><div class="stat-lbl">To download &amp; use</div></div>
-  </div>
-</section>
+  <footer>
+    <div class="footer-logo" onclick="showPage('home')">Vend<span>iq</span></div>
+    <div class="footer-links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('home');scrollTo('#features')">Features</a>
+      <a onclick="showPage('home');scrollTo('#download')">Download</a>
+      <a onclick="showPage('contact')">Contact us</a>
+    </div>
+    <div class="footer-copy">© 2026 Vendiq. Free to use.</div>
+  </footer>
+</div>
 
-<!-- FEATURES -->
-<section class="features" id="features">
-  <div class="section-label">What Vendiq does</div>
-  <h2 class="section-title fade-up">Everything you need.<br><em>Nothing you don't.</em></h2>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Page switching
+function showPage(name){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));
+  document.getElementById('pg-'+name).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  initObserver();
+}
 
-  <div class="feat-grid">
-    <div class="feat fade-up">
-      <span class="feat-icon">🔍</span>
-      <h3>Dual AI search</h3>
-      <p>Type any product and Vendiq searches Amazon for the sell price and Alibaba, Sam's Club, and wholesale directories for bulk cost — at the same time.</p>
-      <span class="feat-tag">Powered by Claude AI</span>
-    </div>
-    <div class="feat fade-up" style="transition-delay:.1s">
-      <span class="feat-icon">📷</span>
-      <h3>Screenshot scanner</h3>
-      <p>Found a deal on a supplier site? Screenshot it. Vendiq reads the price, product name, and quantity from the image and autofills everything instantly.</p>
-      <span class="feat-tag">AI vision</span>
-    </div>
-    <div class="feat fade-up" style="transition-delay:.2s">
-      <span class="feat-icon">📊</span>
-      <h3>Instant profit calc</h3>
-      <p>See your real profit after Amazon FBA fees, referral fees, and shipping — before you spend a dollar. No guesswork, no spreadsheets.</p>
-      <span class="feat-tag">Real-time</span>
-    </div>
-    <div class="feat fade-up" style="transition-delay:.0s">
-      <span class="feat-icon">📦</span>
-      <h3>Deal tracker</h3>
-      <p>Log every product with notes, categories, attached images, and full deal history. Filter by category. Tap to expand any deal and see every detail.</p>
-      <span class="feat-tag">With CSV export</span>
-    </div>
-    <div class="feat fade-up" style="transition-delay:.1s">
-      <span class="feat-icon">📋</span>
-      <h3>Image clipboard</h3>
-      <p>Save bulk listing screenshots to a clipboard tab. Auto-expires after 24 hours (configurable). Attach saved images directly to your tracked products.</p>
-      <span class="feat-tag">24h auto-expire</span>
-    </div>
-    <div class="feat fade-up" style="transition-delay:.2s">
-      <span class="feat-icon">🛡️</span>
-      <h3>Budget safeguards</h3>
-      <p>Set your budget and Vendiq warns you at 75%, alerts you at 90%, and fully pauses the system at 100% — so you never accidentally overspend.</p>
-      <span class="feat-tag">3-level protection</span>
-    </div>
-  </div>
-</section>
+function scrollTo(hash){
+  setTimeout(()=>{
+    const el=document.querySelector(hash);
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  },100);
+}
 
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="section-label" style="text-align:center">The workflow</div>
-  <h2 class="section-title fade-up">From search to<br><em>shipped inventory</em></h2>
-  <div class="how-inner">
-    <div class="how-step">
-      <div class="how-num n1">1</div>
-      <div class="how-content">
-        <h3>Search any product</h3>
-        <p>Type a product name into the Scout tab. Vendiq's AI searches Amazon and wholesale suppliers simultaneously and autofills both prices in seconds.</p>
-      </div>
-    </div>
-    <div class="how-step">
-      <div class="how-num n2">2</div>
-      <div class="how-content">
-        <h3>Scan a bulk deal</h3>
-        <p>Browsing Alibaba or Sam's Club? Screenshot the listing and tap "Scan." Vendiq reads the bulk price directly from the image — no typing needed.</p>
-      </div>
-    </div>
-    <div class="how-step">
-      <div class="how-num n3">3</div>
-      <div class="how-content">
-        <h3>Review your profit breakdown</h3>
-        <p>See exactly what you'll earn per unit and in total, after every Amazon fee. Get a clear Buy / Skip / Borderline verdict against your margin target.</p>
-      </div>
-    </div>
-    <div class="how-step">
-      <div class="how-num n4">4</div>
-      <div class="how-content">
-        <h3>Add to tracker with notes</h3>
-        <p>Log the deal with a category, supplier notes, and attached screenshots. Tap any product in the Tracker to expand full deal history.</p>
-      </div>
-    </div>
-    <div class="how-step">
-      <div class="how-num n5">5</div>
-      <div class="how-content">
-        <h3>Monitor &amp; export</h3>
-        <p>Track total profit, invested, and avg margin across all your deals. Filter by category. Export to CSV anytime to use in a spreadsheet.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DOWNLOAD -->
-<section class="download" id="download">
-  <div class="download-card fade-up">
-    <h2>Get Vendiq<br>on your phone</h2>
-    <p>Download the app file below, open it in your phone's browser, and add it to your home screen — no App Store needed.</p>
-
-    <div class="dl-steps">
-      <div class="dl-step">📥 <span>1.</span> Download below</div>
-      <div class="dl-step">📱 <span>2.</span> Open in Safari or Chrome</div>
-      <div class="dl-step">➕ <span>3.</span> Add to Home Screen</div>
-      <div class="dl-step">🚀 <span>4.</span> Launch like a real app</div>
-    </div>
-
-    <div class="download-btns">
-      <button class="btn-primary" onclick="downloadApp()">⬇ Download Vendiq — free</button>
-      <a href="mailto:vendiq@tuta.io" class="btn-secondary">✉ Contact support</a>
-    </div>
-    <div class="download-note">Requires a free Anthropic API key for AI features — get one at console.anthropic.com</div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-logo">Vend<span>iq</span></div>
-  <div class="footer-links">
-    <a href="#features">Features</a>
-    <a href="#how">How it works</a>
-    <a href="#download">Download</a>
-    <a href="mailto:vendiq@tuta.io">vendiq@tuta.io</a>
-  </div>
-  <div class="footer-copy">© 2026 Vendiq. Free to use.</div>
-</footer>
-
-<script>
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold: 0.15});
-document.querySelectorAll('.fade-up, .how-step').forEach(el => observer.observe(el));
-
-// Stagger how-steps
-document.querySelectorAll('.how-step').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.1) + 's';
-});
-
-// Download app function — fetches vendiq.html from same directory
+// Download app
 async function downloadApp(){
-  try {
-    // Try to fetch the app file from same directory
-    const res = await fetch('vendiq.html');
+  try{
+    const res=await fetch('vendiq.html');
     if(res.ok){
-      const blob = await res.blob();
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'vendiq.html';
+      const blob=await res.blob();
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download='vendiq.html';
       a.click();
       URL.revokeObjectURL(a.href);
-    } else {
-      fallbackDownload();
-    }
-  } catch(e) {
-    fallbackDownload();
-  }
+    } else { fallback(); }
+  } catch(e){ fallback(); }
+}
+function fallback(){
+  alert('To get the Vendiq app:\n\nEmail vendiq@tuta.io and we\'ll send it right to you!');
 }
 
-function fallbackDownload(){
-  // If vendiq.html isn't in same folder, show instructions
-  alert('To get the Vendiq app file:\n\n1. Email vendiq@tuta.io and ask for the app file\n2. Or contact support — we\'ll send it right to you!\n\nvendiq@tuta.io');
+// Copy email
+function copyEmail(){
+  navigator.clipboard.writeText('vendiq@tuta.io').then(()=>{
+    const btn=document.querySelector('.copy-btn');
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    setTimeout(()=>btn.textContent=orig,2000);
+  });
 }
-</script>
-</body>
-</html> 
+
+// Scroll animations
+function initObserver(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e
