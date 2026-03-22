@@ -410,7 +410,7 @@ function scrollToEl(id) {
   }, 80);
 }
 function goHome()     { showPage('home'); }
-function goContact()  { showPage('contact'); }
+function goContact()  { showPage('contact'); window.scrollTo(0,0); }
 function goHow()      { showPage('home'); scrollToEl('how'); }
 function goDownload() { showPage('home'); scrollToEl('download'); }
 
@@ -499,6 +499,12 @@ function initObserver() {
 }
 
 initObserver();
+
+// Render email via JS so scrapers and Cloudflare can't mangle it
+(function() {
+  var el = document.getElementById('emailAddr');
+  if (el) el.textContent = 'vendiq' + '@' + 'tuta.io';
+})();
 </script>
 </body>
 </html>
