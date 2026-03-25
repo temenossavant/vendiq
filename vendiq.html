@@ -834,35 +834,26 @@ if(!localStorage.getItem('v_server')){
 }
 load();updateBudget();updateServerStatus();
 
-// Nav button listeners - use both touchend and click for Android compatibility
+// Nav - event delegation on the nav element itself (most reliable on Android)
 (function(){
-  var navMap = {
-    'n-scout': 'scout',
-    'n-tracker': 'tracker',
-    'n-clip': 'clip',
-    'n-help': 'help',
-    'n-settings': 'settings'
-  };
-  Object.keys(navMap).forEach(function(id) {
-    var btn = document.getElementById(id);
-    if (!btn) return;
-    var page = navMap[id];
-    // touchend fires before click and feels instant on mobile
-    btn.addEventListener('touchend', function(e) {
-      e.preventDefault();
-      showPage(page);
-    }, { passive: false });
-    // click as fallback for desktop/laptop
-    btn.addEventListener('click', function(e) {
-      showPage(page);
-    });
-  });
+  var nav = document.querySelector('.nav');
+  if(!nav) return;
+  function handleNav(e) {
+    var btn = e.target.closest('.nb');
+    if(!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var id = btn.id; // e.g. "n-scout"
+    var page = id.replace('n-', ''); // e.g. "scout"
+    showPage(page);
+  }
+  nav.addEventListener('touchstart', handleNav, {passive: false});
+  nav.addEventListener('click', handleNav);
 })();
-
 (function(){var el=document.getElementById('appEmail');if(el)el.textContent='vendiq'+'@'+'tuta.io';})();
 if('serviceWorker' in navigator){
   const sw=[
-    "const C='vendiq-v6';",
+    "const C='vendiq-v7';",
     "self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(['.']))));",
     "self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));"
   ].join('');
